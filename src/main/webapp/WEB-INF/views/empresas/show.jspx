@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_esijob_domain_Empresa" object="${empresa}" path="/empresas" z="ohQ5V3h4afdOwjnMa83rBQIW8tk=">
+        <field:display field="idusuario" id="s_es_uca_iw_esijob_domain_Empresa_idusuario" object="${empresa}" z="uFacSkcw+ovo2PZZWcXwkXo8C8Q="/>
+        <field:display field="nombre" id="s_es_uca_iw_esijob_domain_Empresa_nombre" object="${empresa}" z="KVCPxO0Q/eOBLyqdM6QcJ8wsp+4="/>
+        <field:display field="cif" id="s_es_uca_iw_esijob_domain_Empresa_cif" object="${empresa}" z="iPxWOKYsLZE6RtGYGOHDrr8OGLI="/>
+        <field:display field="email" id="s_es_uca_iw_esijob_domain_Empresa_email" object="${empresa}" z="fjmmGHQ9C5WkX8HEwtpjoyfipyY="/>
+        <field:display field="actProf" id="s_es_uca_iw_esijob_domain_Empresa_actProf" object="${empresa}" z="Dqg5sV2g3yjSe9Hz9GAJrvCXPiY="/>
+        <field:display field="numEmp" id="s_es_uca_iw_esijob_domain_Empresa_numEmp" object="${empresa}" z="CgaaSWQeUH/dViPsL+cKk6zQMzM="/>
+    </page:show>
+</div>

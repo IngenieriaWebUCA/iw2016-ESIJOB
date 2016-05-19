@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_esijob_domain_Empresa" modelAttribute="empresa" path="/empresas" versionField="none" z="HPWlvVmCg57V/E747GINuBYw5h0=">
+        <field:simple field="sedes" id="c_es_uca_iw_esijob_domain_Empresa_sedes" messageCode="entity_reference_not_managed" messageCodeAttribute="Sede" z="SknD5vJ9BAiM2sXnBrXcRNnrsQM="/>
+        <field:select field="idusuario" id="c_es_uca_iw_esijob_domain_Empresa_idusuario" itemValue="id" items="${usuarios}" path="/usuarios" z="F7b51mskV3bS4TXssSIysQbUQis="/>
+        <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Empresa_nombre" required="true" z="iLTF1vIVegaqCsGg6PU2uS4IG2g="/>
+        <field:input field="cif" id="c_es_uca_iw_esijob_domain_Empresa_cif" required="true" z="GrD3niNzAGpgiKConqs3v7tML50="/>
+        <field:input field="email" id="c_es_uca_iw_esijob_domain_Empresa_email" required="true" validationMessageCode="field_invalid_email" z="U8k8ky/bc88S/v4StS3gnhLTeS4="/>
+        <field:input field="actProf" id="c_es_uca_iw_esijob_domain_Empresa_actProf" required="true" z="Qt0ZbvI4thTYesnGoVs68WpARWM="/>
+        <field:input field="numEmp" id="c_es_uca_iw_esijob_domain_Empresa_numEmp" required="true" validationMessageCode="field_invalid_integer" z="OebypHDGirX7OJwqnBSNAqlgV8c="/>
+    </form:update>
+</div>

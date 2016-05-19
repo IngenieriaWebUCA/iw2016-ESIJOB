@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_esijob_domain_Oferta" modelAttribute="oferta" path="/ofertas" versionField="none" z="nuIP4I6ZnJd47wZyD47iB5OIf5U=">
+        <field:simple field="inscripcions" id="c_es_uca_iw_esijob_domain_Oferta_inscripcions" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="4Bl20j5boalWrDqh39VXZ1IhTvI="/>
+        <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Oferta_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="lKuk7Wacjeyw88TZeJILanNOWrM="/>
+        <field:select field="idformacion" id="c_es_uca_iw_esijob_domain_Oferta_idformacion" itemValue="id" items="${formacions}" path="/formacions" z="hKy6Te1df04FVHdytrrXGGU435k="/>
+        <field:select field="idsede" id="c_es_uca_iw_esijob_domain_Oferta_idsede" itemValue="id" items="${sedes}" path="/sedes" z="55T4yWCuVZWK+8+qXPiVqlim2GQ="/>
+        <field:input field="titulo" id="c_es_uca_iw_esijob_domain_Oferta_titulo" required="true" z="eBVild+MmK2w051C6kCHQ1T5eIM="/>
+        <field:input field="infoPuesto" id="c_es_uca_iw_esijob_domain_Oferta_infoPuesto" z="B+Q2iipp5yVayqUhmSX2TpZz7VY="/>
+        <field:input field="tipoContrato" id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" validationMessageCode="field_invalid_integer" z="c45nwxI6s4vCvJnjD5y9jC0c8qg="/>
+        <field:input field="salarioBruto" id="c_es_uca_iw_esijob_domain_Oferta_salarioBruto" validationMessageCode="field_invalid_integer" z="q8bGniLPqKGftaFsDjiiVIaiZls="/>
+        <field:datetime dateTimePattern="${oferta_fechainc_date_format}" field="fechaInc" id="c_es_uca_iw_esijob_domain_Oferta_fechaInc" z="o2v7B3Uc+h16CHZq+F7JFXeb73I="/>
+        <field:input field="numVac" id="c_es_uca_iw_esijob_domain_Oferta_numVac" validationMessageCode="field_invalid_integer" z="/YBFl3MMBhD8vv4wJvKZHfHMFsg="/>
+        <field:input field="perfilDem" id="c_es_uca_iw_esijob_domain_Oferta_perfilDem" z="XGqdJuBkuLirKqE6bnC8lgs//Ug="/>
+        <field:datetime dateTimePattern="${oferta_fecinioferta_date_format}" field="fecIniOferta" id="c_es_uca_iw_esijob_domain_Oferta_fecIniOferta" required="true" z="BiIMNO38ZCFuHlMRnjR9OdYrQwA="/>
+        <field:datetime dateTimePattern="${oferta_fecfinoferta_date_format}" field="fecFinOferta" id="c_es_uca_iw_esijob_domain_Oferta_fecFinOferta" required="true" z="Ihuri4XYK5bQuDHPWnPTZJ4QP+A="/>
+        <field:input field="estado" id="c_es_uca_iw_esijob_domain_Oferta_estado" required="true" validationMessageCode="field_invalid_integer" z="gDnlF3UAl73zBK7GG21WcipWIkI="/>
+    </form:update>
+</div>

@@ -1,0 +1,14 @@
+*.swp
+*.tmp
+log.roo
+bin/
+tmp/
+.classpath
+.project
+.settings/
+.loadpath
+.recommenders
+.metadata
+local.properties
+target/
+.springBeans

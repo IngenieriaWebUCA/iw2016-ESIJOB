@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_es_uca_iw_esijob_domain_Formaciondemandante" items="${formaciondemandantes}" z="Erkb/W0jyCbdAqM9yIQIIHJW00Y=">
+        <table:table data="${formaciondemandantes}" id="l_es_uca_iw_esijob_domain_Formaciondemandante" path="/formaciondemandantes" z="VDRqQGvnjXYfqme0SGPoiJkYf7w=">
+            <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" property="idcentro" z="q9cAMxZGVB4elmud7fUwz+nf+Jw="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" property="idformacion" z="exU1ebQx5Ex654HWi+XB73okQmM="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idcurriculum" property="idcurriculum" z="Dfxc3PPkgdkvLXllj26AHVJN6JM="/>
+        </table:table>
+    </page:list>
+</div>

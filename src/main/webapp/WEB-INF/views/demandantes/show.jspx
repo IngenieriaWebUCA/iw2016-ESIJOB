@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_es_uca_iw_esijob_domain_Demandante" object="${demandante}" path="/demandantes" z="nORtBsWk1xUYQSMTbszS1gLbZy0=">
+        <field:display field="idusuario" id="s_es_uca_iw_esijob_domain_Demandante_idusuario" object="${demandante}" z="U1SABw2FplMo+i7X1vLK1PZwRN8="/>
+        <field:display field="nombre" id="s_es_uca_iw_esijob_domain_Demandante_nombre" object="${demandante}" z="m0+SsQXHkoebX5Q8tc/acC12IeY="/>
+        <field:display date="true" dateTimePattern="${demandante_fecnac_date_format}" field="fecNac" id="s_es_uca_iw_esijob_domain_Demandante_fecNac" object="${demandante}" z="zIlazlyzVwyP4XoMZNhsN2v2FCQ="/>
+        <field:display field="sexo" id="s_es_uca_iw_esijob_domain_Demandante_sexo" object="${demandante}" z="xKLZV8kb1zh/To2hK6Idf9mUZHI="/>
+        <field:display field="direccion" id="s_es_uca_iw_esijob_domain_Demandante_direccion" object="${demandante}" z="GM+5wgZhBhWZi38ZnBedumfhivU="/>
+        <field:display field="email" id="s_es_uca_iw_esijob_domain_Demandante_email" object="${demandante}" z="tfJFmiMIBY/9CfpU86j7KRjQOqo="/>
+        <field:display field="telefono" id="s_es_uca_iw_esijob_domain_Demandante_telefono" object="${demandante}" z="H2EnrKUYWdzvVglgY8uDJV/B7+o="/>
+        <field:display field="resumenTray" id="s_es_uca_iw_esijob_domain_Demandante_resumenTray" object="${demandante}" z="i4UL1q2vDlLArZhC6c2LNeuFb08="/>
+        <field:display field="foto" id="s_es_uca_iw_esijob_domain_Demandante_foto" object="${demandante}" z="wfjWpVD8N+IBocy/+RTOdCTvhJg="/>
+        <field:display field="trabajosDisp" id="s_es_uca_iw_esijob_domain_Demandante_trabajosDisp" object="${demandante}" z="HKfgkwdYdTENY7AbJrZg98qn/ZA="/>
+        <field:display field="experiencia" id="s_es_uca_iw_esijob_domain_Demandante_experiencia" object="${demandante}" z="tYv1F3p3jbq+dY6pljXe2JPdMBc="/>
+    </page:show>
+</div>
