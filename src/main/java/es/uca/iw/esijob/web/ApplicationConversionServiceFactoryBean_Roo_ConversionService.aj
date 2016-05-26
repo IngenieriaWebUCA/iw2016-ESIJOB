@@ -316,6 +316,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
+    public Converter<String, InscripcionPK> ApplicationConversionServiceFactoryBean.getJsonToInscripcionPKConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.InscripcionPK>() {
+            public InscripcionPK convert(String encodedJson) {
+                return InscripcionPK.fromJsonToInscripcionPK(new String(Base64.decodeBase64(encodedJson)));
+            }
+        };
+    }
+    
+    public Converter<InscripcionPK, String> ApplicationConversionServiceFactoryBean.getInscripcionPKToJsonConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.InscripcionPK, java.lang.String>() {
+            public String convert(InscripcionPK inscripcionPK) {
+                return Base64.encodeBase64URLSafeString(inscripcionPK.toJson().getBytes());
+            }
+        };
+    }
+    
     public Converter<String, FormaciondemandantePK> ApplicationConversionServiceFactoryBean.getJsonToFormaciondemandantePKConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.FormaciondemandantePK>() {
             public FormaciondemandantePK convert(String encodedJson) {
@@ -344,22 +360,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.PuestoPK, java.lang.String>() {
             public String convert(PuestoPK puestoPK) {
                 return Base64.encodeBase64URLSafeString(puestoPK.toJson().getBytes());
-            }
-        };
-    }
-    
-    public Converter<String, InscripcionPK> ApplicationConversionServiceFactoryBean.getJsonToInscripcionPKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.InscripcionPK>() {
-            public InscripcionPK convert(String encodedJson) {
-                return InscripcionPK.fromJsonToInscripcionPK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<InscripcionPK, String> ApplicationConversionServiceFactoryBean.getInscripcionPKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.InscripcionPK, java.lang.String>() {
-            public String convert(InscripcionPK inscripcionPK) {
-                return Base64.encodeBase64URLSafeString(inscripcionPK.toJson().getBytes());
             }
         };
     }
@@ -401,12 +401,12 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getUsuarioToStringConverter());
         registry.addConverter(getIdToUsuarioConverter());
         registry.addConverter(getStringToUsuarioConverter());
+        registry.addConverter(getJsonToInscripcionPKConverter());
+        registry.addConverter(getInscripcionPKToJsonConverter());
         registry.addConverter(getJsonToFormaciondemandantePKConverter());
         registry.addConverter(getFormaciondemandantePKToJsonConverter());
         registry.addConverter(getJsonToPuestoPKConverter());
         registry.addConverter(getPuestoPKToJsonConverter());
-        registry.addConverter(getJsonToInscripcionPKConverter());
-        registry.addConverter(getInscripcionPKToJsonConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
