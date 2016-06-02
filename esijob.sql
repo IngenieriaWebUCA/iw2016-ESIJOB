@@ -1,5 +1,10 @@
+/*DROP DATABASE IF EXISTS `esijob`;*/
 CREATE DATABASE  IF NOT EXISTS `esijob` /*!40100 DEFAULT CHARACTER SET latin1 */;
+GRANT ALL PRIVILEGES ON `esijob`.* TO 'esijob'@'localhost';
 USE `esijob`;
+
+
+
 -- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: esijob
