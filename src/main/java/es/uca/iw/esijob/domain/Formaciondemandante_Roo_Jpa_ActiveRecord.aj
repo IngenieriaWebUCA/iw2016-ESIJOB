@@ -4,7 +4,6 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Formaciondemandante;
-import es.uca.iw.esijob.domain.FormaciondemandantePK;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -42,7 +41,7 @@ privileged aspect Formaciondemandante_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Formaciondemandante.class).getResultList();
     }
     
-    public static Formaciondemandante Formaciondemandante.findFormaciondemandante(FormaciondemandantePK id) {
+    public static Formaciondemandante Formaciondemandante.findFormaciondemandante(Integer id) {
         if (id == null) return null;
         return entityManager().find(Formaciondemandante.class, id);
     }

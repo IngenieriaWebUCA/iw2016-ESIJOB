@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_esijob_domain_Centro" modelAttribute="centro" path="/centroes" versionField="none" z="JyvoCnU0R4o+6jNChJRqyEEzJXs=">
-        <field:simple field="formaciondemandantes" id="c_es_uca_iw_esijob_domain_Centro_formaciondemandantes" messageCode="entity_reference_not_managed" messageCodeAttribute="Formaciondemandante" z="N+vnYrwIFj+IyAK6mFnF4X84dak="/>
+        <field:simple field="formaciondemandantes" id="c_es_uca_iw_esijob_domain_Centro_formaciondemandantes" messageCode="entity_reference_not_managed" messageCodeAttribute="Formaciondemandante" render="false" z="user-managed"/>
         <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Centro_nombre" required="true" z="5hAsLiHoVUf+HLSbyxlNA1SZADk="/>
     </form:update>
 </div>

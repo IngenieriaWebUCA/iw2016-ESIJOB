@@ -4,7 +4,6 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Inscripcion;
-import es.uca.iw.esijob.domain.InscripcionPK;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -42,7 +41,7 @@ privileged aspect Inscripcion_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Inscripcion.class).getResultList();
     }
     
-    public static Inscripcion Inscripcion.findInscripcion(InscripcionPK id) {
+    public static Inscripcion Inscripcion.findInscripcion(Integer id) {
         if (id == null) return null;
         return entityManager().find(Inscripcion.class, id);
     }

@@ -4,9 +4,9 @@
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_esijob_domain_Inscripcion" items="${inscripcions}" z="pOTW5F8ancDd/fCpcYWr7a/vz24=">
         <table:table data="${inscripcions}" id="l_es_uca_iw_esijob_domain_Inscripcion" path="/inscripcions" z="8D7KAIfFRwJZgxplXwomb7tH3cM=">
-            <table:column id="c_es_uca_iw_esijob_domain_Inscripcion_idcurriculum" property="idcurriculum" z="JJTjfzP5n1eKrEtnNW1Z3jae5Jw="/>
             <table:column id="c_es_uca_iw_esijob_domain_Inscripcion_idoferta" property="idoferta" z="2OsWX++nBvkmZS4lD8HFZyTJMSs="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Inscripcion_estado" property="estado" z="+39HvarGdXy0v4h6q49QHwo2GJs="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Inscripcion_iddemandante" property="iddemandante" z="yMBXxouFO+LfT6Rwv6qZbSEB9e4="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Inscripcion_estadoInscripcion" property="estadoInscripcion" z="c4xJBYzcqrtujGgHWpEuMiNbsDg="/>
         </table:table>
     </page:list>
 </div>

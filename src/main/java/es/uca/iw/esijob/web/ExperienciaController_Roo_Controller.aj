@@ -5,7 +5,6 @@ package es.uca.iw.esijob.web;
 
 import es.uca.iw.esijob.domain.Demandante;
 import es.uca.iw.esijob.domain.Experiencia;
-import es.uca.iw.esijob.domain.Puesto;
 import es.uca.iw.esijob.web.ExperienciaController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
@@ -99,7 +98,6 @@ privileged aspect ExperienciaController_Roo_Controller {
         uiModel.addAttribute("experiencia", experiencia);
         addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
-        uiModel.addAttribute("puestoes", Puesto.findAllPuestoes());
     }
     
     String ExperienciaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

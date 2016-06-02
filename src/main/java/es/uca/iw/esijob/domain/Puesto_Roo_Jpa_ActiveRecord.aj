@@ -4,7 +4,6 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Puesto;
-import es.uca.iw.esijob.domain.PuestoPK;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -42,7 +41,7 @@ privileged aspect Puesto_Roo_Jpa_ActiveRecord {
         return entityManager().createQuery(jpaQuery, Puesto.class).getResultList();
     }
     
-    public static Puesto Puesto.findPuesto(PuestoPK id) {
+    public static Puesto Puesto.findPuesto(Integer id) {
         if (id == null) return null;
         return entityManager().find(Puesto.class, id);
     }

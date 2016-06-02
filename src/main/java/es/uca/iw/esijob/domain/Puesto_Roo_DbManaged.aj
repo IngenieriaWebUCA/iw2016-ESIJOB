@@ -4,25 +4,26 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Demandante;
-import es.uca.iw.esijob.domain.Experiencia;
 import es.uca.iw.esijob.domain.Oferta;
 import es.uca.iw.esijob.domain.Puesto;
+import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 
 privileged aspect Puesto_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "iddemandante", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "iddemandante", referencedColumnName = "id", nullable = false)
     private Demandante Puesto.iddemandante;
     
     @ManyToOne
-    @JoinColumn(name = "idexperiencia", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    private Experiencia Puesto.idexperiencia;
-    
-    @ManyToOne
-    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false)
     private Oferta Puesto.idoferta;
+    
+    @Column(name = "nombre", length = 45)
+    @NotNull
+    private String Puesto.nombre;
     
     public Demandante Puesto.getIddemandante() {
         return iddemandante;
@@ -32,20 +33,20 @@ privileged aspect Puesto_Roo_DbManaged {
         this.iddemandante = iddemandante;
     }
     
-    public Experiencia Puesto.getIdexperiencia() {
-        return idexperiencia;
-    }
-    
-    public void Puesto.setIdexperiencia(Experiencia idexperiencia) {
-        this.idexperiencia = idexperiencia;
-    }
-    
     public Oferta Puesto.getIdoferta() {
         return idoferta;
     }
     
     public void Puesto.setIdoferta(Oferta idoferta) {
         this.idoferta = idoferta;
+    }
+    
+    public String Puesto.getNombre() {
+        return nombre;
+    }
+    
+    public void Puesto.setNombre(String nombre) {
+        this.nombre = nombre;
     }
     
 }

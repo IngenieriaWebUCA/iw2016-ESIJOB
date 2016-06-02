@@ -3,6 +3,8 @@
 
 package es.uca.iw.esijob.web;
 
+import es.uca.iw.esijob.domain.Contrato;
+import es.uca.iw.esijob.domain.Estado;
 import es.uca.iw.esijob.domain.Formacion;
 import es.uca.iw.esijob.domain.Inscripcion;
 import es.uca.iw.esijob.domain.Oferta;
@@ -101,6 +103,8 @@ privileged aspect OfertaController_Roo_Controller {
     void OfertaController.populateEditForm(Model uiModel, Oferta oferta) {
         uiModel.addAttribute("oferta", oferta);
         addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("contratoes", Contrato.findAllContratoes());
+        uiModel.addAttribute("estadoes", Estado.findAllEstadoes());
         uiModel.addAttribute("formacions", Formacion.findAllFormacions());
         uiModel.addAttribute("inscripcions", Inscripcion.findAllInscripcions());
         uiModel.addAttribute("puestoes", Puesto.findAllPuestoes());

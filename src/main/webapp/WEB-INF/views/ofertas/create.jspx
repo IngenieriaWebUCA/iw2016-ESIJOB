@@ -3,20 +3,20 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Oferta" modelAttribute="oferta" path="/ofertas" render="${empty dependencies}" z="PVQ73UqHZWOb60bkLODF92vGHh8=">
-        <field:simple field="inscripcions" id="c_es_uca_iw_esijob_domain_Oferta_inscripcions" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="4Bl20j5boalWrDqh39VXZ1IhTvI="/>
-        <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Oferta_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="lKuk7Wacjeyw88TZeJILanNOWrM="/>
-        <field:select field="idformacion" id="c_es_uca_iw_esijob_domain_Oferta_idformacion" itemValue="id" items="${formacions}" path="/formacions" z="hKy6Te1df04FVHdytrrXGGU435k="/>
-        <field:select field="idsede" id="c_es_uca_iw_esijob_domain_Oferta_idsede" itemValue="id" items="${sedes}" path="/sedes" z="55T4yWCuVZWK+8+qXPiVqlim2GQ="/>
+        <field:simple field="inscripcions" id="c_es_uca_iw_esijob_domain_Oferta_inscripcions" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" render="false" z="user-managed"/>
+        <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Oferta_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" render="false" z="user-managed"/>
+        <field:select field="idformacion" id="c_es_uca_iw_esijob_domain_Oferta_idformacion" itemLabel="titulacion" itemValue="id" items="${formacions}" path="/formacions" z="user-managed"/>
+        <field:select field="idsede" id="c_es_uca_iw_esijob_domain_Oferta_idsede" itemLabel="nombre" itemValue="id" items="${sedes}" path="/sedes" z="user-managed"/>
         <field:input field="titulo" id="c_es_uca_iw_esijob_domain_Oferta_titulo" required="true" z="eBVild+MmK2w051C6kCHQ1T5eIM="/>
         <field:input field="infoPuesto" id="c_es_uca_iw_esijob_domain_Oferta_infoPuesto" z="B+Q2iipp5yVayqUhmSX2TpZz7VY="/>
-        <field:input field="tipoContrato" id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" validationMessageCode="field_invalid_integer" z="c45nwxI6s4vCvJnjD5y9jC0c8qg="/>
+        <field:select field="tipoContrato" id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" itemValue="id" items="${contratoes}" path="/contratoes" z="N21OUGlM6B8VJzfgnuuw0RC4wQs="/>
         <field:input field="salarioBruto" id="c_es_uca_iw_esijob_domain_Oferta_salarioBruto" validationMessageCode="field_invalid_integer" z="q8bGniLPqKGftaFsDjiiVIaiZls="/>
         <field:datetime dateTimePattern="${oferta_fechainc_date_format}" field="fechaInc" id="c_es_uca_iw_esijob_domain_Oferta_fechaInc" z="o2v7B3Uc+h16CHZq+F7JFXeb73I="/>
         <field:input field="numVac" id="c_es_uca_iw_esijob_domain_Oferta_numVac" validationMessageCode="field_invalid_integer" z="/YBFl3MMBhD8vv4wJvKZHfHMFsg="/>
         <field:input field="perfilDem" id="c_es_uca_iw_esijob_domain_Oferta_perfilDem" z="XGqdJuBkuLirKqE6bnC8lgs//Ug="/>
         <field:datetime dateTimePattern="${oferta_fecinioferta_date_format}" field="fecIniOferta" id="c_es_uca_iw_esijob_domain_Oferta_fecIniOferta" required="true" z="BiIMNO38ZCFuHlMRnjR9OdYrQwA="/>
         <field:datetime dateTimePattern="${oferta_fecfinoferta_date_format}" field="fecFinOferta" id="c_es_uca_iw_esijob_domain_Oferta_fecFinOferta" required="true" z="Ihuri4XYK5bQuDHPWnPTZJ4QP+A="/>
-        <field:input field="estado" id="c_es_uca_iw_esijob_domain_Oferta_estado" required="true" validationMessageCode="field_invalid_integer" z="gDnlF3UAl73zBK7GG21WcipWIkI="/>
+        <field:select field="estado" id="c_es_uca_iw_esijob_domain_Oferta_estado" itemValue="id" items="${estadoes}" path="/estadoes" z="mcQs4Aw5fFc2JBCb18oe8jm0Qc0="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_esijob_domain_Oferta" render="${not empty dependencies}" z="mcKH7/y85aLSSManC/0o1wUoKn8="/>
 </div>

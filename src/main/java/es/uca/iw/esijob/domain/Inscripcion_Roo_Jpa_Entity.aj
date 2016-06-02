@@ -4,9 +4,11 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Inscripcion;
-import es.uca.iw.esijob.domain.InscripcionPK;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 privileged aspect Inscripcion_Roo_Jpa_Entity {
@@ -15,14 +17,16 @@ privileged aspect Inscripcion_Roo_Jpa_Entity {
     
     declare @type: Inscripcion: @Table(name = "inscripcion");
     
-    @EmbeddedId
-    private InscripcionPK Inscripcion.id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Integer Inscripcion.id;
     
-    public InscripcionPK Inscripcion.getId() {
+    public Integer Inscripcion.getId() {
         return this.id;
     }
     
-    public void Inscripcion.setId(InscripcionPK id) {
+    public void Inscripcion.setId(Integer id) {
         this.id = id;
     }
     

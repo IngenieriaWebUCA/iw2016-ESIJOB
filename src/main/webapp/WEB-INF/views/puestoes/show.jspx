@@ -5,6 +5,6 @@
     <page:show id="ps_es_uca_iw_esijob_domain_Puesto" object="${puesto}" path="/puestoes" z="0orJJHbeeHzjcR5qQCdbfbHOlao=">
         <field:display field="idoferta" id="s_es_uca_iw_esijob_domain_Puesto_idoferta" object="${puesto}" z="Bu3aA6PSwUzv4ue4OVPNFIUjawc="/>
         <field:display field="iddemandante" id="s_es_uca_iw_esijob_domain_Puesto_iddemandante" object="${puesto}" z="JlmShfz7bkTTDXhuqKaXd3J+DZ4="/>
-        <field:display field="idexperiencia" id="s_es_uca_iw_esijob_domain_Puesto_idexperiencia" object="${puesto}" z="bKQSFNl7YkEIMMmrA2d55GF5mJA="/>
+        <field:display field="nombre" id="s_es_uca_iw_esijob_domain_Puesto_nombre" object="${puesto}" z="0E+lQaiT5PtKgkcoHREI7gTOd58="/>
     </page:show>
 </div>

@@ -4,9 +4,11 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Formaciondemandante;
-import es.uca.iw.esijob.domain.FormaciondemandantePK;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 privileged aspect Formaciondemandante_Roo_Jpa_Entity {
@@ -15,14 +17,16 @@ privileged aspect Formaciondemandante_Roo_Jpa_Entity {
     
     declare @type: Formaciondemandante: @Table(name = "formaciondemandante");
     
-    @EmbeddedId
-    private FormaciondemandantePK Formaciondemandante.id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Integer Formaciondemandante.id;
     
-    public FormaciondemandantePK Formaciondemandante.getId() {
+    public Integer Formaciondemandante.getId() {
         return this.id;
     }
     
-    public void Formaciondemandante.setId(FormaciondemandantePK id) {
+    public void Formaciondemandante.setId(Integer id) {
         this.id = id;
     }
     

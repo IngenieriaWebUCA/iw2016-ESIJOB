@@ -3,6 +3,8 @@
 
 package es.uca.iw.esijob.domain;
 
+import es.uca.iw.esijob.domain.Contrato;
+import es.uca.iw.esijob.domain.Estado;
 import es.uca.iw.esijob.domain.Formacion;
 import es.uca.iw.esijob.domain.Inscripcion;
 import es.uca.iw.esijob.domain.Oferta;
@@ -32,6 +34,14 @@ privileged aspect Oferta_Roo_DbManaged {
     private Formacion Oferta.idformacion;
     
     @ManyToOne
+    @JoinColumn(name = "tipoContrato", referencedColumnName = "id", nullable = false)
+    private Contrato Oferta.tipoContrato;
+    
+    @ManyToOne
+    @JoinColumn(name = "estado", referencedColumnName = "id", nullable = false)
+    private Estado Oferta.estado;
+    
+    @ManyToOne
     @JoinColumn(name = "idsede", referencedColumnName = "id", nullable = false)
     private Sede Oferta.idsede;
     
@@ -41,9 +51,6 @@ privileged aspect Oferta_Roo_DbManaged {
     
     @Column(name = "infoPuesto", length = 1024)
     private String Oferta.infoPuesto;
-    
-    @Column(name = "tipoContrato")
-    private Integer Oferta.tipoContrato;
     
     @Column(name = "salarioBruto")
     private Integer Oferta.salarioBruto;
@@ -71,10 +78,6 @@ privileged aspect Oferta_Roo_DbManaged {
     @DateTimeFormat(style = "M-")
     private Date Oferta.fecFinOferta;
     
-    @Column(name = "estado")
-    @NotNull
-    private Integer Oferta.estado;
-    
     public Set<Inscripcion> Oferta.getInscripcions() {
         return inscripcions;
     }
@@ -99,6 +102,22 @@ privileged aspect Oferta_Roo_DbManaged {
         this.idformacion = idformacion;
     }
     
+    public Contrato Oferta.getTipoContrato() {
+        return tipoContrato;
+    }
+    
+    public void Oferta.setTipoContrato(Contrato tipoContrato) {
+        this.tipoContrato = tipoContrato;
+    }
+    
+    public Estado Oferta.getEstado() {
+        return estado;
+    }
+    
+    public void Oferta.setEstado(Estado estado) {
+        this.estado = estado;
+    }
+    
     public Sede Oferta.getIdsede() {
         return idsede;
     }
@@ -121,14 +140,6 @@ privileged aspect Oferta_Roo_DbManaged {
     
     public void Oferta.setInfoPuesto(String infoPuesto) {
         this.infoPuesto = infoPuesto;
-    }
-    
-    public Integer Oferta.getTipoContrato() {
-        return tipoContrato;
-    }
-    
-    public void Oferta.setTipoContrato(Integer tipoContrato) {
-        this.tipoContrato = tipoContrato;
     }
     
     public Integer Oferta.getSalarioBruto() {
@@ -177,14 +188,6 @@ privileged aspect Oferta_Roo_DbManaged {
     
     public void Oferta.setFecFinOferta(Date fecFinOferta) {
         this.fecFinOferta = fecFinOferta;
-    }
-    
-    public Integer Oferta.getEstado() {
-        return estado;
-    }
-    
-    public void Oferta.setEstado(Integer estado) {
-        this.estado = estado;
     }
     
 }

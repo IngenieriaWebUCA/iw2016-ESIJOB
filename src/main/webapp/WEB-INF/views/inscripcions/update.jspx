@@ -3,6 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_esijob_domain_Inscripcion" modelAttribute="inscripcion" path="/inscripcions" versionField="none" z="eiVaiR4WQjVu8rK9/5Yobii2DSg=">
-        <field:input field="estado" id="c_es_uca_iw_esijob_domain_Inscripcion_estado" required="true" validationMessageCode="field_invalid_integer" z="xT7xnkC6ZCmPy/TL0Pm2MAotv1g="/>
+        <field:select field="idoferta" itemLabel="titulo" id="c_es_uca_iw_esijob_domain_Inscripcion_idoferta" itemValue="id" items="${ofertas}" path="/ofertas" z="e5z1a9cnBMYZkNDJ7b7keM3KppY="/>
+        <field:select field="iddemandante" itemLabel="nombre" id="c_es_uca_iw_esijob_domain_Inscripcion_iddemandante" itemValue="id" items="${demandantes}" path="/demandantes" z="VUFuNCFKSMOXweuY5A3PROxBtzY="/>
+        <field:select field="estadoInscripcion" id="c_es_uca_iw_esijob_domain_Inscripcion_estadoInscripcion" itemValue="id" items="${estadoinscripcions}" path="/estadoinscripcions" z="KGh/L2HoINrb/B+ZLvUwiLCVFoI="/>
     </form:update>
 </div>

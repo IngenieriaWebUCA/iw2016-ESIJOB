@@ -4,22 +4,21 @@
 package es.uca.iw.esijob.web;
 
 import es.uca.iw.esijob.domain.Centro;
+import es.uca.iw.esijob.domain.Contrato;
 import es.uca.iw.esijob.domain.Demandante;
 import es.uca.iw.esijob.domain.Empresa;
+import es.uca.iw.esijob.domain.Estado;
+import es.uca.iw.esijob.domain.EstadoInscripcion;
 import es.uca.iw.esijob.domain.Experiencia;
 import es.uca.iw.esijob.domain.Formacion;
 import es.uca.iw.esijob.domain.Formaciondemandante;
-import es.uca.iw.esijob.domain.FormaciondemandantePK;
 import es.uca.iw.esijob.domain.Inscripcion;
-import es.uca.iw.esijob.domain.InscripcionPK;
 import es.uca.iw.esijob.domain.Oferta;
 import es.uca.iw.esijob.domain.Puesto;
-import es.uca.iw.esijob.domain.PuestoPK;
 import es.uca.iw.esijob.domain.Sede;
 import es.uca.iw.esijob.domain.Tipoformacion;
 import es.uca.iw.esijob.domain.Usuario;
 import es.uca.iw.esijob.web.ApplicationConversionServiceFactoryBean;
-import org.apache.commons.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -48,6 +47,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Centro>() {
             public es.uca.iw.esijob.domain.Centro convert(String id) {
                 return getObject().convert(getObject().convert(id, Integer.class), Centro.class);
+            }
+        };
+    }
+    
+    public Converter<Contrato, String> ApplicationConversionServiceFactoryBean.getContratoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Contrato, java.lang.String>() {
+            public String convert(Contrato contrato) {
+                return new StringBuilder().append(contrato.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Integer, Contrato> ApplicationConversionServiceFactoryBean.getIdToContratoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.Contrato>() {
+            public es.uca.iw.esijob.domain.Contrato convert(java.lang.Integer id) {
+                return Contrato.findContrato(id);
+            }
+        };
+    }
+    
+    public Converter<String, Contrato> ApplicationConversionServiceFactoryBean.getStringToContratoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Contrato>() {
+            public es.uca.iw.esijob.domain.Contrato convert(String id) {
+                return getObject().convert(getObject().convert(id, Integer.class), Contrato.class);
             }
         };
     }
@@ -96,6 +119,54 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Empresa>() {
             public es.uca.iw.esijob.domain.Empresa convert(String id) {
                 return getObject().convert(getObject().convert(id, Integer.class), Empresa.class);
+            }
+        };
+    }
+    
+    public Converter<Estado, String> ApplicationConversionServiceFactoryBean.getEstadoToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Estado, java.lang.String>() {
+            public String convert(Estado estado) {
+                return new StringBuilder().append(estado.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Integer, Estado> ApplicationConversionServiceFactoryBean.getIdToEstadoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.Estado>() {
+            public es.uca.iw.esijob.domain.Estado convert(java.lang.Integer id) {
+                return Estado.findEstado(id);
+            }
+        };
+    }
+    
+    public Converter<String, Estado> ApplicationConversionServiceFactoryBean.getStringToEstadoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Estado>() {
+            public es.uca.iw.esijob.domain.Estado convert(String id) {
+                return getObject().convert(getObject().convert(id, Integer.class), Estado.class);
+            }
+        };
+    }
+    
+    public Converter<EstadoInscripcion, String> ApplicationConversionServiceFactoryBean.getEstadoInscripcionToStringConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.EstadoInscripcion, java.lang.String>() {
+            public String convert(EstadoInscripcion estadoInscripcion) {
+                return new StringBuilder().append(estadoInscripcion.getNombre()).toString();
+            }
+        };
+    }
+    
+    public Converter<Integer, EstadoInscripcion> ApplicationConversionServiceFactoryBean.getIdToEstadoInscripcionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.EstadoInscripcion>() {
+            public es.uca.iw.esijob.domain.EstadoInscripcion convert(java.lang.Integer id) {
+                return EstadoInscripcion.findEstadoInscripcion(id);
+            }
+        };
+    }
+    
+    public Converter<String, EstadoInscripcion> ApplicationConversionServiceFactoryBean.getStringToEstadoInscripcionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.EstadoInscripcion>() {
+            public es.uca.iw.esijob.domain.EstadoInscripcion convert(String id) {
+                return getObject().convert(getObject().convert(id, Integer.class), EstadoInscripcion.class);
             }
         };
     }
@@ -156,9 +227,9 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<FormaciondemandantePK, Formaciondemandante> ApplicationConversionServiceFactoryBean.getIdToFormaciondemandanteConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.FormaciondemandantePK, es.uca.iw.esijob.domain.Formaciondemandante>() {
-            public es.uca.iw.esijob.domain.Formaciondemandante convert(es.uca.iw.esijob.domain.FormaciondemandantePK id) {
+    public Converter<Integer, Formaciondemandante> ApplicationConversionServiceFactoryBean.getIdToFormaciondemandanteConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.Formaciondemandante>() {
+            public es.uca.iw.esijob.domain.Formaciondemandante convert(java.lang.Integer id) {
                 return Formaciondemandante.findFormaciondemandante(id);
             }
         };
@@ -167,7 +238,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<String, Formaciondemandante> ApplicationConversionServiceFactoryBean.getStringToFormaciondemandanteConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Formaciondemandante>() {
             public es.uca.iw.esijob.domain.Formaciondemandante convert(String id) {
-                return getObject().convert(getObject().convert(id, FormaciondemandantePK.class), Formaciondemandante.class);
+                return getObject().convert(getObject().convert(id, Integer.class), Formaciondemandante.class);
             }
         };
     }
@@ -175,14 +246,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Inscripcion, String> ApplicationConversionServiceFactoryBean.getInscripcionToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Inscripcion, java.lang.String>() {
             public String convert(Inscripcion inscripcion) {
-                return new StringBuilder().append(inscripcion.getEstado()).toString();
+                return "(no displayable fields)";
             }
         };
     }
     
-    public Converter<InscripcionPK, Inscripcion> ApplicationConversionServiceFactoryBean.getIdToInscripcionConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.InscripcionPK, es.uca.iw.esijob.domain.Inscripcion>() {
-            public es.uca.iw.esijob.domain.Inscripcion convert(es.uca.iw.esijob.domain.InscripcionPK id) {
+    public Converter<Integer, Inscripcion> ApplicationConversionServiceFactoryBean.getIdToInscripcionConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.Inscripcion>() {
+            public es.uca.iw.esijob.domain.Inscripcion convert(java.lang.Integer id) {
                 return Inscripcion.findInscripcion(id);
             }
         };
@@ -191,7 +262,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<String, Inscripcion> ApplicationConversionServiceFactoryBean.getStringToInscripcionConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Inscripcion>() {
             public es.uca.iw.esijob.domain.Inscripcion convert(String id) {
-                return getObject().convert(getObject().convert(id, InscripcionPK.class), Inscripcion.class);
+                return getObject().convert(getObject().convert(id, Integer.class), Inscripcion.class);
             }
         };
     }
@@ -199,7 +270,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Oferta, String> ApplicationConversionServiceFactoryBean.getOfertaToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Oferta, java.lang.String>() {
             public String convert(Oferta oferta) {
-                return new StringBuilder().append(oferta.getTitulo()).append(' ').append(oferta.getInfoPuesto()).append(' ').append(oferta.getTipoContrato()).append(' ').append(oferta.getSalarioBruto()).toString();
+                return new StringBuilder().append(oferta.getTitulo()).append(' ').append(oferta.getInfoPuesto()).append(' ').append(oferta.getSalarioBruto()).append(' ').append(oferta.getFechaInc()).toString();
             }
         };
     }
@@ -223,14 +294,14 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Puesto, String> ApplicationConversionServiceFactoryBean.getPuestoToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Puesto, java.lang.String>() {
             public String convert(Puesto puesto) {
-                return "(no displayable fields)";
+                return new StringBuilder().append(puesto.getNombre()).toString();
             }
         };
     }
     
-    public Converter<PuestoPK, Puesto> ApplicationConversionServiceFactoryBean.getIdToPuestoConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.PuestoPK, es.uca.iw.esijob.domain.Puesto>() {
-            public es.uca.iw.esijob.domain.Puesto convert(es.uca.iw.esijob.domain.PuestoPK id) {
+    public Converter<Integer, Puesto> ApplicationConversionServiceFactoryBean.getIdToPuestoConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.Integer, es.uca.iw.esijob.domain.Puesto>() {
+            public es.uca.iw.esijob.domain.Puesto convert(java.lang.Integer id) {
                 return Puesto.findPuesto(id);
             }
         };
@@ -239,7 +310,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<String, Puesto> ApplicationConversionServiceFactoryBean.getStringToPuestoConverter() {
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Puesto>() {
             public es.uca.iw.esijob.domain.Puesto convert(String id) {
-                return getObject().convert(getObject().convert(id, PuestoPK.class), Puesto.class);
+                return getObject().convert(getObject().convert(id, Integer.class), Puesto.class);
             }
         };
     }
@@ -316,64 +387,25 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         };
     }
     
-    public Converter<String, PuestoPK> ApplicationConversionServiceFactoryBean.getJsonToPuestoPKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.PuestoPK>() {
-            public PuestoPK convert(String encodedJson) {
-                return PuestoPK.fromJsonToPuestoPK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<PuestoPK, String> ApplicationConversionServiceFactoryBean.getPuestoPKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.PuestoPK, java.lang.String>() {
-            public String convert(PuestoPK puestoPK) {
-                return Base64.encodeBase64URLSafeString(puestoPK.toJson().getBytes());
-            }
-        };
-    }
-    
-    public Converter<String, InscripcionPK> ApplicationConversionServiceFactoryBean.getJsonToInscripcionPKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.InscripcionPK>() {
-            public InscripcionPK convert(String encodedJson) {
-                return InscripcionPK.fromJsonToInscripcionPK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<InscripcionPK, String> ApplicationConversionServiceFactoryBean.getInscripcionPKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.InscripcionPK, java.lang.String>() {
-            public String convert(InscripcionPK inscripcionPK) {
-                return Base64.encodeBase64URLSafeString(inscripcionPK.toJson().getBytes());
-            }
-        };
-    }
-    
-    public Converter<String, FormaciondemandantePK> ApplicationConversionServiceFactoryBean.getJsonToFormaciondemandantePKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.FormaciondemandantePK>() {
-            public FormaciondemandantePK convert(String encodedJson) {
-                return FormaciondemandantePK.fromJsonToFormaciondemandantePK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<FormaciondemandantePK, String> ApplicationConversionServiceFactoryBean.getFormaciondemandantePKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.FormaciondemandantePK, java.lang.String>() {
-            public String convert(FormaciondemandantePK formaciondemandantePK) {
-                return Base64.encodeBase64URLSafeString(formaciondemandantePK.toJson().getBytes());
-            }
-        };
-    }
-    
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(getCentroToStringConverter());
         registry.addConverter(getIdToCentroConverter());
         registry.addConverter(getStringToCentroConverter());
+        registry.addConverter(getContratoToStringConverter());
+        registry.addConverter(getIdToContratoConverter());
+        registry.addConverter(getStringToContratoConverter());
         registry.addConverter(getDemandanteToStringConverter());
         registry.addConverter(getIdToDemandanteConverter());
         registry.addConverter(getStringToDemandanteConverter());
         registry.addConverter(getEmpresaToStringConverter());
         registry.addConverter(getIdToEmpresaConverter());
         registry.addConverter(getStringToEmpresaConverter());
+        registry.addConverter(getEstadoToStringConverter());
+        registry.addConverter(getIdToEstadoConverter());
+        registry.addConverter(getStringToEstadoConverter());
+        registry.addConverter(getEstadoInscripcionToStringConverter());
+        registry.addConverter(getIdToEstadoInscripcionConverter());
+        registry.addConverter(getStringToEstadoInscripcionConverter());
         registry.addConverter(getExperienciaToStringConverter());
         registry.addConverter(getIdToExperienciaConverter());
         registry.addConverter(getStringToExperienciaConverter());
@@ -401,12 +433,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getUsuarioToStringConverter());
         registry.addConverter(getIdToUsuarioConverter());
         registry.addConverter(getStringToUsuarioConverter());
-        registry.addConverter(getJsonToPuestoPKConverter());
-        registry.addConverter(getPuestoPKToJsonConverter());
-        registry.addConverter(getJsonToInscripcionPKConverter());
-        registry.addConverter(getInscripcionPKToJsonConverter());
-        registry.addConverter(getJsonToFormaciondemandantePKConverter());
-        registry.addConverter(getFormaciondemandantePKToJsonConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

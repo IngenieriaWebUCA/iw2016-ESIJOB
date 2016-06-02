@@ -4,15 +4,13 @@
 package es.uca.iw.esijob.web;
 
 import es.uca.iw.esijob.domain.Demandante;
+import es.uca.iw.esijob.domain.EstadoInscripcion;
 import es.uca.iw.esijob.domain.Inscripcion;
-import es.uca.iw.esijob.domain.InscripcionPK;
 import es.uca.iw.esijob.domain.Oferta;
 import es.uca.iw.esijob.web.InscripcionController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,14 +22,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect InscripcionController_Roo_Controller {
     
-    private ConversionService InscripcionController.conversionService;
-    
-    @Autowired
-    public InscripcionController.new(ConversionService conversionService) {
-        super();
-        this.conversionService = conversionService;
-    }
-
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String InscripcionController.create(@Valid Inscripcion inscripcion, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -40,7 +30,7 @@ privileged aspect InscripcionController_Roo_Controller {
         }
         uiModel.asMap().clear();
         inscripcion.persist();
-        return "redirect:/inscripcions/" + encodeUrlPathSegment(conversionService.convert(inscripcion.getId(), String.class), httpServletRequest);
+        return "redirect:/inscripcions/" + encodeUrlPathSegment(inscripcion.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -50,9 +40,9 @@ privileged aspect InscripcionController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String InscripcionController.show(@PathVariable("id") InscripcionPK id, Model uiModel) {
+    public String InscripcionController.show(@PathVariable("id") Integer id, Model uiModel) {
         uiModel.addAttribute("inscripcion", Inscripcion.findInscripcion(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
+        uiModel.addAttribute("itemId", id);
         return "inscripcions/show";
     }
     
@@ -78,17 +68,17 @@ privileged aspect InscripcionController_Roo_Controller {
         }
         uiModel.asMap().clear();
         inscripcion.merge();
-        return "redirect:/inscripcions/" + encodeUrlPathSegment(conversionService.convert(inscripcion.getId(), String.class), httpServletRequest);
+        return "redirect:/inscripcions/" + encodeUrlPathSegment(inscripcion.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String InscripcionController.updateForm(@PathVariable("id") InscripcionPK id, Model uiModel) {
+    public String InscripcionController.updateForm(@PathVariable("id") Integer id, Model uiModel) {
         populateEditForm(uiModel, Inscripcion.findInscripcion(id));
         return "inscripcions/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String InscripcionController.delete(@PathVariable("id") InscripcionPK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String InscripcionController.delete(@PathVariable("id") Integer id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Inscripcion inscripcion = Inscripcion.findInscripcion(id);
         inscripcion.remove();
         uiModel.asMap().clear();
@@ -100,6 +90,7 @@ privileged aspect InscripcionController_Roo_Controller {
     void InscripcionController.populateEditForm(Model uiModel, Inscripcion inscripcion) {
         uiModel.addAttribute("inscripcion", inscripcion);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
+        uiModel.addAttribute("estadoinscripcions", EstadoInscripcion.findAllEstadoInscripcions());
         uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
     }
     

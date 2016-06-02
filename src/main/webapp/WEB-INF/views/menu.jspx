@@ -7,14 +7,6 @@
             <menu:item id="i_experiencia_new" messageCode="global_menu_new" url="/experiencias?form" z="Gj9nsB/aDd/9cC/oyGqhopJQZKQ="/>
             <menu:item id="i_experiencia_list" messageCode="global_menu_list" url="/experiencias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3kfSOJO53kI+4hjcnrvpR+D+xW0="/>
         </menu:category>
-        <menu:category id="c_centro" z="1tlkP3mjOxGKI2J7BFbbRYyfAdQ=">
-            <menu:item id="i_centro_new" messageCode="global_menu_new" url="/centroes?form" z="aL4Kf7MujpLHGFqxEx3CjcmfWeo="/>
-            <menu:item id="i_centro_list" messageCode="global_menu_list" url="/centroes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="9iO4ersXZfbk4+cKBAtOVO6xpEU="/>
-        </menu:category>
-        <menu:category id="c_oferta" z="hAFpA26H1SoEOzHx9qIuh9xoiFY=">
-            <menu:item id="i_oferta_new" messageCode="global_menu_new" url="/ofertas?form" z="XL2la3mMU88KBAljrX+q6go8ogw="/>
-            <menu:item id="i_oferta_list" messageCode="global_menu_list" url="/ofertas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YFpuok8se1icruycVP1Ngny6x3c="/>
-        </menu:category>
         <menu:category id="c_sede" z="7EzPyDL+NtLNPcddzAaxLiuD9z4=">
             <menu:item id="i_sede_new" messageCode="global_menu_new" url="/sedes?form" z="nNwEO550C1wQKkL0SKzL49NX3jQ="/>
             <menu:item id="i_sede_list" messageCode="global_menu_list" url="/sedes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="qAKXAtFl8ofIZI1sP+ywtoUQgEc="/>
@@ -23,23 +15,31 @@
             <menu:item id="i_puesto_new" messageCode="global_menu_new" url="/puestoes?form" z="rzennAJW1UB/Pr561CwGbtPHyW8="/>
             <menu:item id="i_puesto_list" messageCode="global_menu_list" url="/puestoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="nX70xhyoThA4YBS5Ti2aXVkvY3k="/>
         </menu:category>
-        <menu:category id="c_formacion" z="IeUE1qUB60SvsVjUpyu3CKjAwcQ=">
-            <menu:item id="i_formacion_new" messageCode="global_menu_new" url="/formacions?form" z="J5LIhWh+qugo3BonD7DqT+MNhdk="/>
-            <menu:item id="i_formacion_list" messageCode="global_menu_list" url="/formacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HUwg6eWuyi/+bXE5Mnr+igrwIkc="/>
-        </menu:category>
-        <menu:category id="c_inscripcion" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w=">
-            <menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
-            <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
-        </menu:category>
         <menu:category id="c_formaciondemandante" z="0LHCTQ/DDU43GAjiD4WJs6352CU=">
             <menu:item id="i_formaciondemandante_new" messageCode="global_menu_new" url="/formaciondemandantes?form" z="qSq1Bi/rhXI4K2PPpzWyWphtCIM="/>
             <menu:item id="i_formaciondemandante_list" messageCode="global_menu_list" url="/formaciondemandantes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="NNggn1ivj1Q579944nibvHL4qfI="/>
         </menu:category>
-        <!-- TIPO FORMACION -->
+        <!-- OFERTA E INSCRIPCION -->
+        <menu:category id="c_oferta" z="hAFpA26H1SoEOzHx9qIuh9xoiFY=">
+            <menu:item id="i_oferta_new" messageCode="global_menu_new" url="/ofertas?form" z="XL2la3mMU88KBAljrX+q6go8ogw="/>
+            <menu:item id="i_oferta_list" messageCode="global_menu_list" url="/ofertas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YFpuok8se1icruycVP1Ngny6x3c="/>
+            <menu:item id="i_inscripcion_new" messageCode="global_menu_new" url="/inscripcions?form" z="c/fKPa6XZ8IWr+NnUZsDmwBVAoo="/>
+            <menu:item id="i_inscripcion_list" messageCode="global_menu_list" url="/inscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="EtJRFL7zVP9IpwmuzMtP1k1M0P0="/>
+        </menu:category>
+        <!-- FORMACION -->
         <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <menu:category id="c_tipoformacion" z="93W0FQt/d1F/U3EaB2bV+s0bwjs=">
+            <menu:category id="c_formacion" z="IeUE1qUB60SvsVjUpyu3CKjAwcQ=">
+                <menu:item id="i_formacion_new" messageCode="global_menu_new" url="/formacions?form" z="J5LIhWh+qugo3BonD7DqT+MNhdk="/>
+                <menu:item id="i_formacion_list" messageCode="global_menu_list" url="/formacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="HUwg6eWuyi/+bXE5Mnr+igrwIkc="/>
                 <menu:item id="i_tipoformacion_new" messageCode="global_menu_new" url="/tipoformacions?form" z="HZO3NxOfMQRShRoIXHqW8awz+G8="/>
                 <menu:item id="i_tipoformacion_list" messageCode="global_menu_list" url="/tipoformacions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="4FG5DJ0nbJDZo2Tuso87pSMTvis="/>
+        </menu:category>
+        </sec:authorize>
+        <!-- CENTRO -->
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <menu:category id="c_centro" z="1tlkP3mjOxGKI2J7BFbbRYyfAdQ=">
+                <menu:item id="i_centro_new" messageCode="global_menu_new" url="/centroes?form" z="aL4Kf7MujpLHGFqxEx3CjcmfWeo="/>
+                <menu:item id="i_centro_list" messageCode="global_menu_list" url="/centroes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="9iO4ersXZfbk4+cKBAtOVO6xpEU="/>
             </menu:category>
         </sec:authorize>
         <!-- USUARIO -->
@@ -56,5 +56,26 @@
         <!-- OCULTO -->
         <menu:category id="c_empresa" render="false" z="user-managed"/>
         <menu:category id="c_demandante" render="false" z="user-managed"/>
+        <menu:category id="c_tipoformacion" render="false" z="93W0FQt/d1F/U3EaB2bV+s0bwjs="/>
+        <menu:category id="c_inscripcion" render="false" z="WGH6UGn8Xk1BCQvYxOLO3zhO32w="/>
+        
+        <menu:category id="c_estado" render="false" z="user-managed">
+            <menu:item id="i_estado_new" messageCode="global_menu_new" url="/estadoes?form" z="ycg0kAs5SJ41KTsAQHflCSNyXf0="/>
+            <menu:item id="i_estado_list" messageCode="global_menu_list" url="/estadoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="/PJMqPVs73Y+7l/7KDQDkMo0E5E="/>
+        </menu:category>
+        <menu:category id="c_contrato" render="false" z="user-managed">
+            <menu:item id="i_contrato_new" messageCode="global_menu_new" url="/contratoes?form" z="vb1tJ1UM2JY623zHLBoUK1Cqxbg="/>
+            <menu:item id="i_contrato_list" messageCode="global_menu_list" url="/contratoes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="BiIuV1klML1ew+x6gVGtm8/2lik="/>
+        </menu:category>
+        <menu:category id="c_estadoinscripcion" render="false" z="user-managed">
+            <menu:item id="i_estadoinscripcion_new" messageCode="global_menu_new" url="/estadoinscripcions?form" z="HNQOyJcBacGkZVyVsCDKaNFkMeM="/>
+            <menu:item id="i_estadoinscripcion_list" messageCode="global_menu_list" url="/estadoinscripcions?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Sb4IkAyppbqn4K35VJsDLuZZkQ8="/>
+        </menu:category>
+        <!-- Tests -->
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <menu:category id="c_seleniumtests" z="PPLMd2yNB6/LSbjIWogAacRPU+Q=">
+                <menu:item id="si_seleniumtests_test" messageCode="selenium_menu_test_suite" url="/resources/selenium/test-suite.xhtml" z="wwunW/IPDcunN97u41MvMJZQ2to="/>
+            </menu:category>
+        </sec:authorize>
     </menu:menu>
 </div>

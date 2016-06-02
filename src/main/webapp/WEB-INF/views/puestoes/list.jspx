@@ -6,7 +6,7 @@
         <table:table data="${puestoes}" id="l_es_uca_iw_esijob_domain_Puesto" path="/puestoes" z="/0DG9KeqQpe5Jf0Nsa5GAocAOOg=">
             <table:column id="c_es_uca_iw_esijob_domain_Puesto_idoferta" property="idoferta" z="EsarwUNP5+ZDLMF9XUGBD8j1kkc="/>
             <table:column id="c_es_uca_iw_esijob_domain_Puesto_iddemandante" property="iddemandante" z="fE4ehEd2QGU8ysUzPXlcXoBY8xw="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Puesto_idexperiencia" property="idexperiencia" z="JYmWykZKZ4cLMmw5OgNb/6JQIqE="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Puesto_nombre" property="nombre" z="5cL54mV6/QN7XVpql+Ngvd4Y8kQ="/>
         </table:table>
     </page:list>
 </div>

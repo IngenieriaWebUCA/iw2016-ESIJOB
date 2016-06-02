@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_es_uca_iw_esijob_domain_Sede" modelAttribute="sede" path="/sedes" versionField="none" z="5cYRP9acf/oCBwHRMXLrMPE6Ya0=">
-        <field:simple field="ofertas" id="c_es_uca_iw_esijob_domain_Sede_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="O+mUHuaoJtmylhhdcoS2nNB3aRE="/>
-        <field:select field="idempresa" id="c_es_uca_iw_esijob_domain_Sede_idempresa" itemValue="id" items="${empresas}" path="/empresas" z="luUkt2MyfrvTuPFvikRYK36dAKI="/>
+        <field:simple field="ofertas" id="c_es_uca_iw_esijob_domain_Sede_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" render="false" z="user-managed"/>
+        <field:select field="idempresa" id="c_es_uca_iw_esijob_domain_Sede_idempresa" itemLabel="nombre" itemValue="id" items="${empresas}" path="/empresas" z="user-managed"/>
         <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Sede_nombre" required="true" z="1R5kUhFNxjOX6xx81iMAJc/60sk="/>
         <field:input field="ciudad" id="c_es_uca_iw_esijob_domain_Sede_ciudad" required="true" z="X0t+g9Ja2PIlkzYmgZtuA/QmPtQ="/>
     </form:update>

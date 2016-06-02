@@ -7,13 +7,10 @@ import es.uca.iw.esijob.domain.Centro;
 import es.uca.iw.esijob.domain.Demandante;
 import es.uca.iw.esijob.domain.Formacion;
 import es.uca.iw.esijob.domain.Formaciondemandante;
-import es.uca.iw.esijob.domain.FormaciondemandantePK;
 import es.uca.iw.esijob.web.FormaciondemandanteController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,14 +22,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect FormaciondemandanteController_Roo_Controller {
     
-    private ConversionService FormaciondemandanteController.conversionService;
-    
-    @Autowired
-    public FormaciondemandanteController.new(ConversionService conversionService) {
-        super();
-        this.conversionService = conversionService;
-    }
-
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String FormaciondemandanteController.create(@Valid Formaciondemandante formaciondemandante, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -41,7 +30,7 @@ privileged aspect FormaciondemandanteController_Roo_Controller {
         }
         uiModel.asMap().clear();
         formaciondemandante.persist();
-        return "redirect:/formaciondemandantes/" + encodeUrlPathSegment(conversionService.convert(formaciondemandante.getId(), String.class), httpServletRequest);
+        return "redirect:/formaciondemandantes/" + encodeUrlPathSegment(formaciondemandante.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -51,9 +40,9 @@ privileged aspect FormaciondemandanteController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String FormaciondemandanteController.show(@PathVariable("id") FormaciondemandantePK id, Model uiModel) {
+    public String FormaciondemandanteController.show(@PathVariable("id") Integer id, Model uiModel) {
         uiModel.addAttribute("formaciondemandante", Formaciondemandante.findFormaciondemandante(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
+        uiModel.addAttribute("itemId", id);
         return "formaciondemandantes/show";
     }
     
@@ -79,17 +68,17 @@ privileged aspect FormaciondemandanteController_Roo_Controller {
         }
         uiModel.asMap().clear();
         formaciondemandante.merge();
-        return "redirect:/formaciondemandantes/" + encodeUrlPathSegment(conversionService.convert(formaciondemandante.getId(), String.class), httpServletRequest);
+        return "redirect:/formaciondemandantes/" + encodeUrlPathSegment(formaciondemandante.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String FormaciondemandanteController.updateForm(@PathVariable("id") FormaciondemandantePK id, Model uiModel) {
+    public String FormaciondemandanteController.updateForm(@PathVariable("id") Integer id, Model uiModel) {
         populateEditForm(uiModel, Formaciondemandante.findFormaciondemandante(id));
         return "formaciondemandantes/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String FormaciondemandanteController.delete(@PathVariable("id") FormaciondemandantePK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String FormaciondemandanteController.delete(@PathVariable("id") Integer id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Formaciondemandante formaciondemandante = Formaciondemandante.findFormaciondemandante(id);
         formaciondemandante.remove();
         uiModel.asMap().clear();

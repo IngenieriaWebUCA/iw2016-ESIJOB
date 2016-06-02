@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_es_uca_iw_esijob_domain_Contrato" modelAttribute="contrato" path="/contratoes" versionField="none" z="jGhJwU30wyh08oKqXoo/A/9g2nI=">
+        <field:simple field="ofertas" id="c_es_uca_iw_esijob_domain_Contrato_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="clv5dNevW+d/evAlFCfqk9tapdM="/>
+        <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Contrato_nombre" required="true" z="cUFvN9WF0hk5EtlY05BB17cNJM0="/>
+    </form:update>
+</div>

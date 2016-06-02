@@ -4,9 +4,11 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Puesto;
-import es.uca.iw.esijob.domain.PuestoPK;
-import javax.persistence.EmbeddedId;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 privileged aspect Puesto_Roo_Jpa_Entity {
@@ -15,14 +17,16 @@ privileged aspect Puesto_Roo_Jpa_Entity {
     
     declare @type: Puesto: @Table(name = "puesto");
     
-    @EmbeddedId
-    private PuestoPK Puesto.id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private Integer Puesto.id;
     
-    public PuestoPK Puesto.getId() {
+    public Integer Puesto.getId() {
         return this.id;
     }
     
-    public void Puesto.setId(PuestoPK id) {
+    public void Puesto.setId(Integer id) {
         this.id = id;
     }
     

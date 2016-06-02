@@ -10,7 +10,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 privileged aspect Formaciondemandante_Roo_ToString {
     
     public String Formaciondemandante.toString() {
-        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).setExcludeFieldNames("idcentro", "idformacion", "idcurriculum").toString();
+        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).setExcludeFieldNames("idcentro", "idformacion", "idcurriculum", "iddemandante").toString();
     }
     
 }

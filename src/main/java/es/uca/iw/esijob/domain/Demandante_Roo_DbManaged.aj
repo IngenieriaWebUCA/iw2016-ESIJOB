@@ -25,10 +25,10 @@ privileged aspect Demandante_Roo_DbManaged {
     @OneToMany(mappedBy = "idcurriculum")
     private Set<Experiencia> Demandante.experiencias;
     
-    @OneToMany(mappedBy = "idcurriculum")
+    @OneToMany(mappedBy = "iddemandante")
     private Set<Formaciondemandante> Demandante.formaciondemandantes;
     
-    @OneToMany(mappedBy = "idcurriculum")
+    @OneToMany(mappedBy = "iddemandante")
     private Set<Inscripcion> Demandante.inscripcions;
     
     @OneToMany(mappedBy = "iddemandante")
@@ -69,7 +69,6 @@ privileged aspect Demandante_Roo_DbManaged {
     private String Demandante.resumenTray;
     
     @Column(name = "foto", length = 64)
-    @NotNull
     private String Demandante.foto;
     
     @Column(name = "trabajosDisp", length = 2048)

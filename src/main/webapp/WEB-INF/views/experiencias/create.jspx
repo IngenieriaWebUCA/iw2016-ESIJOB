@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Experiencia" modelAttribute="experiencia" path="/experiencias" render="${empty dependencies}" z="oCG/3jcqzew1wbmpH8Vtw49w/+c=">
-        <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Experiencia_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="YxaNN7RsXYCSevMW6f+qS9AmBAI="/>
-        <field:select field="idcurriculum" id="c_es_uca_iw_esijob_domain_Experiencia_idcurriculum" itemValue="id" items="${demandantes}" path="/demandantes" z="CUsW7Kt/bBNBZrFczUocVYkAq/M="/>
+        <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Experiencia_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" render="false" z="YxaNN7RsXYCSevMW6f+qS9AmBAI="/>
+        <field:select field="idcurriculum" id="c_es_uca_iw_esijob_domain_Experiencia_idcurriculum" itemLabel="nombre" itemValue="id" items="${demandantes}" path="/demandantes" z="user-managed"/>
         <field:datetime dateTimePattern="${experiencia_fecini_date_format}" field="fecIni" id="c_es_uca_iw_esijob_domain_Experiencia_fecIni" required="true" z="M9K8No7fNzrHLb/HQ0qhoi3NZew="/>
         <field:datetime dateTimePattern="${experiencia_fecfin_date_format}" field="fecFin" id="c_es_uca_iw_esijob_domain_Experiencia_fecFin" required="true" z="oXns9ZK6+W6aKum8oII/A7IpYZw="/>
         <field:input field="salario" id="c_es_uca_iw_esijob_domain_Experiencia_salario" required="true" validationMessageCode="field_invalid_integer" z="wk8lolGCF+H174b+fmeL7KCVFpQ="/>

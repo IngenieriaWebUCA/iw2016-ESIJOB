@@ -6,7 +6,7 @@
         <table:table data="${formaciondemandantes}" id="l_es_uca_iw_esijob_domain_Formaciondemandante" path="/formaciondemandantes" z="VDRqQGvnjXYfqme0SGPoiJkYf7w=">
             <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" property="idcentro" z="q9cAMxZGVB4elmud7fUwz+nf+Jw="/>
             <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" property="idformacion" z="exU1ebQx5Ex654HWi+XB73okQmM="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_idcurriculum" property="idcurriculum" z="Dfxc3PPkgdkvLXllj26AHVJN6JM="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" property="iddemandante" z="oebu9EOH2j0ZTNSJDCVFTG11HEQ="/>
         </table:table>
     </page:list>
 </div>

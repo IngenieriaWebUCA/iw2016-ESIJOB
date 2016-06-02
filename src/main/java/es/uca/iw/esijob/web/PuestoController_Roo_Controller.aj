@@ -4,16 +4,12 @@
 package es.uca.iw.esijob.web;
 
 import es.uca.iw.esijob.domain.Demandante;
-import es.uca.iw.esijob.domain.Experiencia;
 import es.uca.iw.esijob.domain.Oferta;
 import es.uca.iw.esijob.domain.Puesto;
-import es.uca.iw.esijob.domain.PuestoPK;
 import es.uca.iw.esijob.web.PuestoController;
 import java.io.UnsupportedEncodingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.convert.ConversionService;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,14 +21,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PuestoController_Roo_Controller {
     
-    private ConversionService PuestoController.conversionService;
-    
-    @Autowired
-    public PuestoController.new(ConversionService conversionService) {
-        super();
-        this.conversionService = conversionService;
-    }
-
     @RequestMapping(method = RequestMethod.POST, produces = "text/html")
     public String PuestoController.create(@Valid Puesto puesto, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
@@ -41,7 +29,7 @@ privileged aspect PuestoController_Roo_Controller {
         }
         uiModel.asMap().clear();
         puesto.persist();
-        return "redirect:/puestoes/" + encodeUrlPathSegment(conversionService.convert(puesto.getId(), String.class), httpServletRequest);
+        return "redirect:/puestoes/" + encodeUrlPathSegment(puesto.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", produces = "text/html")
@@ -51,9 +39,9 @@ privileged aspect PuestoController_Roo_Controller {
     }
     
     @RequestMapping(value = "/{id}", produces = "text/html")
-    public String PuestoController.show(@PathVariable("id") PuestoPK id, Model uiModel) {
+    public String PuestoController.show(@PathVariable("id") Integer id, Model uiModel) {
         uiModel.addAttribute("puesto", Puesto.findPuesto(id));
-        uiModel.addAttribute("itemId", conversionService.convert(id, String.class));
+        uiModel.addAttribute("itemId", id);
         return "puestoes/show";
     }
     
@@ -79,17 +67,17 @@ privileged aspect PuestoController_Roo_Controller {
         }
         uiModel.asMap().clear();
         puesto.merge();
-        return "redirect:/puestoes/" + encodeUrlPathSegment(conversionService.convert(puesto.getId(), String.class), httpServletRequest);
+        return "redirect:/puestoes/" + encodeUrlPathSegment(puesto.getId().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{id}", params = "form", produces = "text/html")
-    public String PuestoController.updateForm(@PathVariable("id") PuestoPK id, Model uiModel) {
+    public String PuestoController.updateForm(@PathVariable("id") Integer id, Model uiModel) {
         populateEditForm(uiModel, Puesto.findPuesto(id));
         return "puestoes/update";
     }
     
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE, produces = "text/html")
-    public String PuestoController.delete(@PathVariable("id") PuestoPK id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+    public String PuestoController.delete(@PathVariable("id") Integer id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         Puesto puesto = Puesto.findPuesto(id);
         puesto.remove();
         uiModel.asMap().clear();
@@ -101,7 +89,6 @@ privileged aspect PuestoController_Roo_Controller {
     void PuestoController.populateEditForm(Model uiModel, Puesto puesto) {
         uiModel.addAttribute("puesto", puesto);
         uiModel.addAttribute("demandantes", Demandante.findAllDemandantes());
-        uiModel.addAttribute("experiencias", Experiencia.findAllExperiencias());
         uiModel.addAttribute("ofertas", Oferta.findAllOfertas());
     }
     

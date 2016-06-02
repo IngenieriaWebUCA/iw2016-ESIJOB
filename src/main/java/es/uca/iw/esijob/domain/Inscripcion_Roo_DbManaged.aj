@@ -4,33 +4,40 @@
 package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Demandante;
+import es.uca.iw.esijob.domain.EstadoInscripcion;
 import es.uca.iw.esijob.domain.Inscripcion;
 import es.uca.iw.esijob.domain.Oferta;
-import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotNull;
 
 privileged aspect Inscripcion_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "idcurriculum", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    private Demandante Inscripcion.idcurriculum;
+    @JoinColumn(name = "iddemandante", referencedColumnName = "id", nullable = false)
+    private Demandante Inscripcion.iddemandante;
     
     @ManyToOne
-    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "estado_inscripcion", referencedColumnName = "id", nullable = false)
+    private EstadoInscripcion Inscripcion.estadoInscripcion;
+    
+    @ManyToOne
+    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false)
     private Oferta Inscripcion.idoferta;
     
-    @Column(name = "estado")
-    @NotNull
-    private Integer Inscripcion.estado;
-    
-    public Demandante Inscripcion.getIdcurriculum() {
-        return idcurriculum;
+    public Demandante Inscripcion.getIddemandante() {
+        return iddemandante;
     }
     
-    public void Inscripcion.setIdcurriculum(Demandante idcurriculum) {
-        this.idcurriculum = idcurriculum;
+    public void Inscripcion.setIddemandante(Demandante iddemandante) {
+        this.iddemandante = iddemandante;
+    }
+    
+    public EstadoInscripcion Inscripcion.getEstadoInscripcion() {
+        return estadoInscripcion;
+    }
+    
+    public void Inscripcion.setEstadoInscripcion(EstadoInscripcion estadoInscripcion) {
+        this.estadoInscripcion = estadoInscripcion;
     }
     
     public Oferta Inscripcion.getIdoferta() {
@@ -39,14 +46,6 @@ privileged aspect Inscripcion_Roo_DbManaged {
     
     public void Inscripcion.setIdoferta(Oferta idoferta) {
         this.idoferta = idoferta;
-    }
-    
-    public Integer Inscripcion.getEstado() {
-        return estado;
-    }
-    
-    public void Inscripcion.setEstado(Integer estado) {
-        this.estado = estado;
     }
     
 }

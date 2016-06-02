@@ -13,16 +13,24 @@ import javax.persistence.ManyToOne;
 privileged aspect Formaciondemandante_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "idformacion", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "iddemandante", referencedColumnName = "id", nullable = false)
+    private Demandante Formaciondemandante.iddemandante;
+    
+    @ManyToOne
+    @JoinColumn(name = "idformacion", referencedColumnName = "id", nullable = false)
     private Formacion Formaciondemandante.idformacion;
     
     @ManyToOne
-    @JoinColumn(name = "idcurriculum", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    private Demandante Formaciondemandante.idcurriculum;
-    
-    @ManyToOne
-    @JoinColumn(name = "idcentro", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "idcentro", referencedColumnName = "id", nullable = false)
     private Centro Formaciondemandante.idcentro;
+    
+    public Demandante Formaciondemandante.getIddemandante() {
+        return iddemandante;
+    }
+    
+    public void Formaciondemandante.setIddemandante(Demandante iddemandante) {
+        this.iddemandante = iddemandante;
+    }
     
     public Formacion Formaciondemandante.getIdformacion() {
         return idformacion;
@@ -30,14 +38,6 @@ privileged aspect Formaciondemandante_Roo_DbManaged {
     
     public void Formaciondemandante.setIdformacion(Formacion idformacion) {
         this.idformacion = idformacion;
-    }
-    
-    public Demandante Formaciondemandante.getIdcurriculum() {
-        return idcurriculum;
-    }
-    
-    public void Formaciondemandante.setIdcurriculum(Demandante idcurriculum) {
-        this.idcurriculum = idcurriculum;
     }
     
     public Centro Formaciondemandante.getIdcentro() {

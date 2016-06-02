@@ -5,22 +5,16 @@ package es.uca.iw.esijob.domain;
 
 import es.uca.iw.esijob.domain.Demandante;
 import es.uca.iw.esijob.domain.Experiencia;
-import es.uca.iw.esijob.domain.Puesto;
 import java.util.Date;
-import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 
 privileged aspect Experiencia_Roo_DbManaged {
-    
-    @OneToMany(mappedBy = "idexperiencia")
-    private Set<Puesto> Experiencia.puestoes;
     
     @ManyToOne
     @JoinColumn(name = "idcurriculum", referencedColumnName = "id", nullable = false)
@@ -45,14 +39,6 @@ privileged aspect Experiencia_Roo_DbManaged {
     @Column(name = "tareas", length = 2048)
     @NotNull
     private String Experiencia.tareas;
-    
-    public Set<Puesto> Experiencia.getPuestoes() {
-        return puestoes;
-    }
-    
-    public void Experiencia.setPuestoes(Set<Puesto> puestoes) {
-        this.puestoes = puestoes;
-    }
     
     public Demandante Experiencia.getIdcurriculum() {
         return idcurriculum;

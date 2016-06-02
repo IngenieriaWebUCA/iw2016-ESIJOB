@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Formacion" modelAttribute="formacion" path="/formacions" render="${empty dependencies}" z="njmtUh6c0cxPQyfRzQkuVK5ju5k=">
-        <field:simple field="formaciondemandantes" id="c_es_uca_iw_esijob_domain_Formacion_formaciondemandantes" messageCode="entity_reference_not_managed" messageCodeAttribute="Formaciondemandante" z="/phq9xwNMloorC3vkRDpOwFaDhE="/>
-        <field:simple field="ofertas" id="c_es_uca_iw_esijob_domain_Formacion_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" z="jdfV0x8v6KtUYU+yXR+3BeVmDTQ="/>
+        <field:simple field="formaciondemandantes" id="c_es_uca_iw_esijob_domain_Formacion_formaciondemandantes" messageCode="entity_reference_not_managed" messageCodeAttribute="Formaciondemandante" render="false" z="user-managed"/>
+        <field:simple field="ofertas" id="c_es_uca_iw_esijob_domain_Formacion_ofertas" messageCode="entity_reference_not_managed" messageCodeAttribute="Oferta" render="false" z="user-managed"/>
         <field:select field="idTipoFormacion" id="c_es_uca_iw_esijob_domain_Formacion_idTipoFormacion" itemValue="id" items="${tipoformacions}" path="/tipoformacions" z="lUGubvLXf7ROWcmlLZHBAT1Ko/w="/>
         <field:input field="titulacion" id="c_es_uca_iw_esijob_domain_Formacion_titulacion" required="true" z="2zlH5X0Zc3oEOk2OaDdoigL8pZg="/>
         <field:input field="nivel" id="c_es_uca_iw_esijob_domain_Formacion_nivel" required="true" z="WppB2iETdpbHA2ifNo3165IQ0tM="/>
