@@ -4,7 +4,7 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Empresa" modelAttribute="empresa" path="/empresas" render="${empty dependencies}" z="KsPB6k7CPlZHoihwYcfB6zvW8eM=">
         <field:simple field="sedes" id="c_es_uca_iw_esijob_domain_Empresa_sedes" messageCode="entity_reference_not_managed" messageCodeAttribute="Sede" z="SknD5vJ9BAiM2sXnBrXcRNnrsQM="/>
-        <field:select field="idusuario" id="c_es_uca_iw_esijob_domain_Empresa_idusuario" itemValue="id" items="${usuarios}" path="/usuarios" z="F7b51mskV3bS4TXssSIysQbUQis="/>
+        <field:select field="idusuario" id="c_es_uca_iw_esijob_domain_Empresa_idusuario" itemLabel="login" itemValue="id" items="${usuarios}" path="/usuarios" z="user-managed"/>
         <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Empresa_nombre" required="true" z="iLTF1vIVegaqCsGg6PU2uS4IG2g="/>
         <field:input field="cif" id="c_es_uca_iw_esijob_domain_Empresa_cif" required="true" z="GrD3niNzAGpgiKConqs3v7tML50="/>
         <field:input field="email" id="c_es_uca_iw_esijob_domain_Empresa_email" required="true" validationMessageCode="field_invalid_email" z="U8k8ky/bc88S/v4StS3gnhLTeS4="/>

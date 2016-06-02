@@ -295,7 +295,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public Converter<Usuario, String> ApplicationConversionServiceFactoryBean.getUsuarioToStringConverter() {
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.Usuario, java.lang.String>() {
             public String convert(Usuario usuario) {
-                return new StringBuilder().append(usuario.getLogin()).append(' ').append(usuario.getPassword()).append(' ').append(usuario.getTipo()).toString();
+                return new StringBuilder().append(usuario.getLogin()).append(' ').append(usuario.getPassword()).append(' ').append(usuario.getRol()).toString();
             }
         };
     }
@@ -312,6 +312,22 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.Usuario>() {
             public es.uca.iw.esijob.domain.Usuario convert(String id) {
                 return getObject().convert(getObject().convert(id, Integer.class), Usuario.class);
+            }
+        };
+    }
+    
+    public Converter<String, PuestoPK> ApplicationConversionServiceFactoryBean.getJsonToPuestoPKConverter() {
+        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.PuestoPK>() {
+            public PuestoPK convert(String encodedJson) {
+                return PuestoPK.fromJsonToPuestoPK(new String(Base64.decodeBase64(encodedJson)));
+            }
+        };
+    }
+    
+    public Converter<PuestoPK, String> ApplicationConversionServiceFactoryBean.getPuestoPKToJsonConverter() {
+        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.PuestoPK, java.lang.String>() {
+            public String convert(PuestoPK puestoPK) {
+                return Base64.encodeBase64URLSafeString(puestoPK.toJson().getBytes());
             }
         };
     }
@@ -344,22 +360,6 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.FormaciondemandantePK, java.lang.String>() {
             public String convert(FormaciondemandantePK formaciondemandantePK) {
                 return Base64.encodeBase64URLSafeString(formaciondemandantePK.toJson().getBytes());
-            }
-        };
-    }
-    
-    public Converter<String, PuestoPK> ApplicationConversionServiceFactoryBean.getJsonToPuestoPKConverter() {
-        return new org.springframework.core.convert.converter.Converter<java.lang.String, es.uca.iw.esijob.domain.PuestoPK>() {
-            public PuestoPK convert(String encodedJson) {
-                return PuestoPK.fromJsonToPuestoPK(new String(Base64.decodeBase64(encodedJson)));
-            }
-        };
-    }
-    
-    public Converter<PuestoPK, String> ApplicationConversionServiceFactoryBean.getPuestoPKToJsonConverter() {
-        return new org.springframework.core.convert.converter.Converter<es.uca.iw.esijob.domain.PuestoPK, java.lang.String>() {
-            public String convert(PuestoPK puestoPK) {
-                return Base64.encodeBase64URLSafeString(puestoPK.toJson().getBytes());
             }
         };
     }
@@ -401,12 +401,12 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         registry.addConverter(getUsuarioToStringConverter());
         registry.addConverter(getIdToUsuarioConverter());
         registry.addConverter(getStringToUsuarioConverter());
+        registry.addConverter(getJsonToPuestoPKConverter());
+        registry.addConverter(getPuestoPKToJsonConverter());
         registry.addConverter(getJsonToInscripcionPKConverter());
         registry.addConverter(getInscripcionPKToJsonConverter());
         registry.addConverter(getJsonToFormaciondemandantePKConverter());
         registry.addConverter(getFormaciondemandantePKToJsonConverter());
-        registry.addConverter(getJsonToPuestoPKConverter());
-        registry.addConverter(getPuestoPKToJsonConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {

@@ -13,10 +13,6 @@ import javax.persistence.ManyToOne;
 privileged aspect Puesto_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    private Oferta Puesto.idoferta;
-    
-    @ManyToOne
     @JoinColumn(name = "iddemandante", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     private Demandante Puesto.iddemandante;
     
@@ -24,13 +20,9 @@ privileged aspect Puesto_Roo_DbManaged {
     @JoinColumn(name = "idexperiencia", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     private Experiencia Puesto.idexperiencia;
     
-    public Oferta Puesto.getIdoferta() {
-        return idoferta;
-    }
-    
-    public void Puesto.setIdoferta(Oferta idoferta) {
-        this.idoferta = idoferta;
-    }
+    @ManyToOne
+    @JoinColumn(name = "idoferta", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    private Oferta Puesto.idoferta;
     
     public Demandante Puesto.getIddemandante() {
         return iddemandante;
@@ -46,6 +38,14 @@ privileged aspect Puesto_Roo_DbManaged {
     
     public void Puesto.setIdexperiencia(Experiencia idexperiencia) {
         this.idexperiencia = idexperiencia;
+    }
+    
+    public Oferta Puesto.getIdoferta() {
+        return idoferta;
+    }
+    
+    public void Puesto.setIdoferta(Oferta idoferta) {
+        this.idoferta = idoferta;
     }
     
 }

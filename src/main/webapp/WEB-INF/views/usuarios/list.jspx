@@ -6,7 +6,8 @@
         <table:table data="${usuarios}" id="l_es_uca_iw_esijob_domain_Usuario" path="/usuarios" z="lq4/NhOeNYpCRNg6tAJsLmTasZ4=">
             <table:column id="c_es_uca_iw_esijob_domain_Usuario_login" property="login" z="Be17Uj9rBTCGytLni1G0ZQGIOQY="/>
             <table:column id="c_es_uca_iw_esijob_domain_Usuario_password" property="password" z="Yvs8Wki+LkKAZ3/G7l+KUZcMwL0="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Usuario_tipo" property="tipo" z="YkUMGAw7P3KO9MV4hRNhStxIg7A="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Usuario_enable" property="enable" z="Kh5BI99aec6kHDNk8UHCkqdTO+8="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Usuario_rol" property="rol" z="D4+DlXF3MxtOZ7bD1lp8X2RBL0g="/>
         </table:table>
     </page:list>
 </div>

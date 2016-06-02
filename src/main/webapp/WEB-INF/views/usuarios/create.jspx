@@ -7,7 +7,8 @@
         <field:simple field="empresas" id="c_es_uca_iw_esijob_domain_Usuario_empresas" messageCode="entity_reference_not_managed" messageCodeAttribute="Empresa" z="ZEk2A9vrTvl1WunpThpQOjcNKPg="/>
         <field:input field="login" id="c_es_uca_iw_esijob_domain_Usuario_login" required="true" z="SfjbI+3MQyfsbJPGA7qCk3XpFl8="/>
         <field:input field="password" id="c_es_uca_iw_esijob_domain_Usuario_password" required="true" z="H4IUmo0E7G1Q5p2EXU+52HBFn54="/>
-        <field:input field="tipo" id="c_es_uca_iw_esijob_domain_Usuario_tipo" required="true" validationMessageCode="field_invalid_integer" z="5bUOHUjZZPTJ9FnhauaQcHT4YwA="/>
+        <field:checkbox field="enable" id="c_es_uca_iw_esijob_domain_Usuario_enable" z="ViuXMjqIx8S89avxj6hIVRf4SJw="/>
+        <field:input field="rol" id="c_es_uca_iw_esijob_domain_Usuario_rol" required="true" z="ckvcDP9XjFcfOH9vOYAnM9I4mnU="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_esijob_domain_Usuario" render="${not empty dependencies}" z="6nDB1fxAIfcJCrjmId/dz8cMDUo="/>
 </div>

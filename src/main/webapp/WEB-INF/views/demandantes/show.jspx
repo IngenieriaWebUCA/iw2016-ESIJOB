@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:show id="ps_es_uca_iw_esijob_domain_Demandante" object="${demandante}" path="/demandantes" z="nORtBsWk1xUYQSMTbszS1gLbZy0=">
-        <field:display field="idusuario" id="s_es_uca_iw_esijob_domain_Demandante_idusuario" object="${demandante}" z="U1SABw2FplMo+i7X1vLK1PZwRN8="/>
+        <field:display field="idusuario" id="s_es_uca_iw_esijob_domain_Demandante_idusuario" itemLabel="login" object="${demandante}" z="user-managed"/>
         <field:display field="nombre" id="s_es_uca_iw_esijob_domain_Demandante_nombre" object="${demandante}" z="m0+SsQXHkoebX5Q8tc/acC12IeY="/>
         <field:display date="true" dateTimePattern="${demandante_fecnac_date_format}" field="fecNac" id="s_es_uca_iw_esijob_domain_Demandante_fecNac" object="${demandante}" z="zIlazlyzVwyP4XoMZNhsN2v2FCQ="/>
         <field:display field="sexo" id="s_es_uca_iw_esijob_domain_Demandante_sexo" object="${demandante}" z="xKLZV8kb1zh/To2hK6Idf9mUZHI="/>

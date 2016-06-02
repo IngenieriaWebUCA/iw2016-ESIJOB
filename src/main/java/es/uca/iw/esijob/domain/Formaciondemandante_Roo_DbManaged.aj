@@ -13,10 +13,6 @@ import javax.persistence.ManyToOne;
 privileged aspect Formaciondemandante_Roo_DbManaged {
     
     @ManyToOne
-    @JoinColumn(name = "idcentro", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
-    private Centro Formaciondemandante.idcentro;
-    
-    @ManyToOne
     @JoinColumn(name = "idformacion", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     private Formacion Formaciondemandante.idformacion;
     
@@ -24,13 +20,9 @@ privileged aspect Formaciondemandante_Roo_DbManaged {
     @JoinColumn(name = "idcurriculum", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
     private Demandante Formaciondemandante.idcurriculum;
     
-    public Centro Formaciondemandante.getIdcentro() {
-        return idcentro;
-    }
-    
-    public void Formaciondemandante.setIdcentro(Centro idcentro) {
-        this.idcentro = idcentro;
-    }
+    @ManyToOne
+    @JoinColumn(name = "idcentro", referencedColumnName = "id", nullable = false, insertable = false, updatable = false)
+    private Centro Formaciondemandante.idcentro;
     
     public Formacion Formaciondemandante.getIdformacion() {
         return idformacion;
@@ -46,6 +38,14 @@ privileged aspect Formaciondemandante_Roo_DbManaged {
     
     public void Formaciondemandante.setIdcurriculum(Demandante idcurriculum) {
         this.idcurriculum = idcurriculum;
+    }
+    
+    public Centro Formaciondemandante.getIdcentro() {
+        return idcentro;
+    }
+    
+    public void Formaciondemandante.setIdcentro(Centro idcentro) {
+        this.idcentro = idcentro;
     }
     
 }

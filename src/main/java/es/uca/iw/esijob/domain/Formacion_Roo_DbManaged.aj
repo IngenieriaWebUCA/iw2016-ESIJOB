@@ -26,9 +26,9 @@ privileged aspect Formacion_Roo_DbManaged {
     @JoinColumn(name = "idTipoFormacion", referencedColumnName = "id", nullable = false)
     private Tipoformacion Formacion.idTipoFormacion;
     
-    @Column(name = "titulacion")
+    @Column(name = "titulacion", length = 128)
     @NotNull
-    private Integer Formacion.titulacion;
+    private String Formacion.titulacion;
     
     @Column(name = "nivel", length = 32)
     @NotNull
@@ -58,11 +58,11 @@ privileged aspect Formacion_Roo_DbManaged {
         this.idTipoFormacion = idTipoFormacion;
     }
     
-    public Integer Formacion.getTitulacion() {
+    public String Formacion.getTitulacion() {
         return titulacion;
     }
     
-    public void Formacion.setTitulacion(Integer titulacion) {
+    public void Formacion.setTitulacion(String titulacion) {
         this.titulacion = titulacion;
     }
     

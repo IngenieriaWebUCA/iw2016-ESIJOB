@@ -23,7 +23,7 @@
         <column name="id" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
         <column name="nombre" primaryKey="false" required="true" scale="0" size="128" type="12,VARCHAR"/>
         <column name="fecNac" primaryKey="false" required="true" scale="0" size="10" type="91,DATE"/>
-        <column description="1: Hombre 2: Mujer" name="sexo" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
+        <column description="H: Hombre M: Mujer" name="sexo" primaryKey="false" required="true" scale="0" size="1" type="12,VARCHAR"/>
         <column name="direccion" primaryKey="false" required="true" scale="0" size="256" type="12,VARCHAR"/>
         <column name="email" primaryKey="false" required="true" scale="0" size="256" type="12,VARCHAR"/>
         <column name="telefono" primaryKey="false" required="true" scale="0" size="16" type="12,VARCHAR"/>
@@ -107,7 +107,7 @@
     <table name="formacion">
         <column name="id" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
         <column name="idTipoFormacion" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
-        <column name="titulacion" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
+        <column name="titulacion" primaryKey="false" required="true" scale="0" size="128" type="12,VARCHAR"/>
         <column description="Solo para idiomas" name="nivel" primaryKey="false" required="true" scale="0" size="32" type="12,VARCHAR"/>
         <foreign-key foreignTable="tipoformacion" name="formacion_ibfk_1" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
@@ -132,10 +132,6 @@
         <column name="idformacion" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="idcurriculum" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="idcentro" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
-        <foreign-key foreignTable="centro" name="formaciondemandante_ibfk_3" onDelete="none" onUpdate="none">
-            <option key="exported" value="false"/>
-            <reference foreign="id" local="idcentro"/>
-        </foreign-key>
         <foreign-key foreignTable="formacion" name="formaciondemandante_ibfk_1" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
             <reference foreign="id" local="idformacion"/>
@@ -143,6 +139,10 @@
         <foreign-key foreignTable="demandante" name="formaciondemandante_ibfk_2" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
             <reference foreign="id" local="idcurriculum"/>
+        </foreign-key>
+        <foreign-key foreignTable="centro" name="formaciondemandante_ibfk_3" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="id" local="idcentro"/>
         </foreign-key>
         <index name="FK_FCFORM">
             <index-column name="idformacion"/>
@@ -221,10 +221,6 @@
         <column name="iddemandante" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="idexperiencia" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
         <column name="idoferta" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
-        <foreign-key foreignTable="oferta" name="fk_puesto_oferta" onDelete="none" onUpdate="none">
-            <option key="exported" value="false"/>
-            <reference foreign="id" local="idoferta"/>
-        </foreign-key>
         <foreign-key foreignTable="demandante" name="fk_puesto_demandante" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
             <reference foreign="id" local="iddemandante"/>
@@ -232,6 +228,10 @@
         <foreign-key foreignTable="experiencia" name="fk_puesto_experiencia" onDelete="none" onUpdate="none">
             <option key="exported" value="false"/>
             <reference foreign="id" local="idexperiencia"/>
+        </foreign-key>
+        <foreign-key foreignTable="oferta" name="fk_puesto_oferta" onDelete="none" onUpdate="none">
+            <option key="exported" value="false"/>
+            <reference foreign="id" local="idoferta"/>
         </foreign-key>
         <index name="iddemandante">
             <index-column name="iddemandante"/>
@@ -278,7 +278,8 @@
         <column name="id" primaryKey="true" required="true" scale="0" size="10" type="4,INT"/>
         <column name="login" primaryKey="false" required="true" scale="0" size="32" type="12,VARCHAR"/>
         <column name="password" primaryKey="false" required="true" scale="0" size="16" type="12,VARCHAR"/>
-        <column description="1: Empresa, 2: Demandante" name="tipo" primaryKey="false" required="true" scale="0" size="10" type="4,INT"/>
+        <column description="1: Empresa, 2: Demandante" name="enable" primaryKey="false" required="true" scale="0" size="0" type="-7,BIT"/>
+        <column name="rol" primaryKey="false" required="true" scale="0" size="45" type="12,VARCHAR"/>
         <foreign-key foreignTable="demandante" name="demandante_ibfk_1" onDelete="none" onUpdate="none">
             <option key="exported" value="true"/>
             <reference foreign="idusuario" local="id"/>

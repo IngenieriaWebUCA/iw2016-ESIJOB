@@ -48,9 +48,9 @@ privileged aspect Demandante_Roo_DbManaged {
     @DateTimeFormat(style = "M-")
     private Date Demandante.fecNac;
     
-    @Column(name = "sexo")
+    @Column(name = "sexo", length = 1)
     @NotNull
-    private Integer Demandante.sexo;
+    private String Demandante.sexo;
     
     @Column(name = "direccion", length = 256)
     @NotNull
@@ -136,11 +136,11 @@ privileged aspect Demandante_Roo_DbManaged {
         this.fecNac = fecNac;
     }
     
-    public Integer Demandante.getSexo() {
+    public String Demandante.getSexo() {
         return sexo;
     }
     
-    public void Demandante.setSexo(Integer sexo) {
+    public void Demandante.setSexo(String sexo) {
         this.sexo = sexo;
     }
     

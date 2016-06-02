@@ -7,10 +7,10 @@
         <field:simple field="formaciondemandantes" id="c_es_uca_iw_esijob_domain_Demandante_formaciondemandantes" messageCode="entity_reference_not_managed" messageCodeAttribute="Formaciondemandante" z="F4rb7MYX8NGGH3XEoLZf6X4ebEw="/>
         <field:simple field="inscripcions" id="c_es_uca_iw_esijob_domain_Demandante_inscripcions" messageCode="entity_reference_not_managed" messageCodeAttribute="Inscripcion" z="5+cG5k4x9deW1MuYrWWho1k+YRg="/>
         <field:simple field="puestoes" id="c_es_uca_iw_esijob_domain_Demandante_puestoes" messageCode="entity_reference_not_managed" messageCodeAttribute="Puesto" z="pxOTD+k6Q0lLZOxMLHUAENrD/9c="/>
-        <field:select field="idusuario" id="c_es_uca_iw_esijob_domain_Demandante_idusuario" itemValue="id" items="${usuarios}" path="/usuarios" z="CvEejPiVoA8FIsyAvLAF3j+PQQA="/>
+        <field:select field="idusuario" id="c_es_uca_iw_esijob_domain_Demandante_idusuario" itemLabel="login" itemValue="id" items="${usuarios}" path="/usuarios" z="user-managed"/>
         <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Demandante_nombre" required="true" z="l4ClkVYon4wYNU8xoqedTdGtreY="/>
         <field:datetime dateTimePattern="${demandante_fecnac_date_format}" field="fecNac" id="c_es_uca_iw_esijob_domain_Demandante_fecNac" required="true" z="ptYi9SWB9RJjM8t+6KSHIqU8NxU="/>
-        <field:input field="sexo" id="c_es_uca_iw_esijob_domain_Demandante_sexo" required="true" validationMessageCode="field_invalid_integer" z="DGedyHFfHrv15xD7NMnedEHRM7s="/>
+        <field:input field="sexo" id="c_es_uca_iw_esijob_domain_Demandante_sexo" required="true" z="R6e4r4z3XQqwcvhvElDDgXxMgPk="/>
         <field:input field="direccion" id="c_es_uca_iw_esijob_domain_Demandante_direccion" required="true" z="I+1rn3vrR2z4LwBMzqCquOmIRlA="/>
         <field:input field="email" id="c_es_uca_iw_esijob_domain_Demandante_email" required="true" validationMessageCode="field_invalid_email" z="CKgfuCK/JmKw76DGIwE0rEcAIiU="/>
         <field:input field="telefono" id="c_es_uca_iw_esijob_domain_Demandante_telefono" required="true" z="DM5JguJzldYDHcDPy9XIpcj2Xvs="/>

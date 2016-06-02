@@ -5,6 +5,7 @@
     <page:show id="ps_es_uca_iw_esijob_domain_Usuario" object="${usuario}" path="/usuarios" z="QUWB4EzWfD6Bsd6/BOG04EQGu4s=">
         <field:display field="login" id="s_es_uca_iw_esijob_domain_Usuario_login" object="${usuario}" z="bIVIQ4R+YN8hou0YbizQNT8N4Sg="/>
         <field:display field="password" id="s_es_uca_iw_esijob_domain_Usuario_password" object="${usuario}" z="Y8LnyiZVJ2ZUP80wg/HbkHuAomo="/>
-        <field:display field="tipo" id="s_es_uca_iw_esijob_domain_Usuario_tipo" object="${usuario}" z="smPBJIO5dYArv8Qte2XcSvyNrEM="/>
+        <field:display field="enable" id="s_es_uca_iw_esijob_domain_Usuario_enable" object="${usuario}" z="CDcf3Cg0vJpnASg9cNmC92X4XN4="/>
+        <field:display field="rol" id="s_es_uca_iw_esijob_domain_Usuario_rol" object="${usuario}" z="hG9VT2WM/pgsfmi4x4wq9T6nIPw="/>
     </page:show>
 </div>
