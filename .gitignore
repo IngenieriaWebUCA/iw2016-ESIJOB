@@ -12,3 +12,5 @@ tmp/
 local.properties
 target/
 .springBeans
+github
+github.pub
