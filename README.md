@@ -2,10 +2,12 @@
 
 Componentes del grupo:
 
-Estefanía Becerra Gallardo
+Becerra Gallardo, Estefanía
 
-Ana Pastor Sánchez
+Pastor Sánchez, Ana
 
-Agustín Piñero Millán
+Piñero Millán, Agustín
 
-José Antonio Adriano Muñoz
+Adriano Muñoz, José Antonio
+
+Enlace a la Wiki de ESIJOB: [ESIJOB](https://github.com/IngenieriaWebUCA/iw2016-ESIJOB/wiki)
