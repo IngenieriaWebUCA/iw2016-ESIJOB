@@ -65,7 +65,7 @@ body {
 
 #menu h2 {
 	color: #fff;
-	background: #82929b;
+	background: #648C1D;
 	text-transform: uppercase;
 	font-weight:bold;
 	font-size: 12px;
@@ -79,7 +79,7 @@ body {
 }
 
 #menu a:hover {
-	color: #82929b;
+	color: #648C1D;
 	background: #fff;
 }
 
@@ -94,7 +94,7 @@ body {
 	float:left;
 }
 
-#footer a:link {color: #82929b;}
+#footer a:link {color: #7db223;}
 
 .quicklinks {
 	clear:both; 
@@ -146,7 +146,7 @@ a.menu, a.menu:link, a.menu:visited {display:block; width:150px; height:25px;}
 
 h1,h2,h3 {
 	font-family: Helvetica, sans-serif;
-	color: #82929b;
+	color: #7db223;
 }
 
 h1 {
@@ -196,7 +196,7 @@ tr:nth-child(even) {
 }
 
 a:link {
-	color: #82929b;
+	color: #7db223;
 }
 
 a:hover {
@@ -204,11 +204,11 @@ a:hover {
 }
 
 a:active {
-	color: #82929b;
+	color: #7db223;
 }
 
 a:visited {
-	color: #82929b;
+	color: #7db223;
 }
 
 li {
@@ -275,7 +275,7 @@ caption {
 }
 
 fieldset {
-	background: #e2e4e5;
+	background: #e0e7d3;
 	padding: 8px;
 	padding-bottom: 22px;
 	border: none;
@@ -292,19 +292,19 @@ fieldset label {
 fieldset textfield {
 	margin: 3px;
 	height: 20px;
-	background: #e2e4e5;
+	background: #e0e7d3;
 }
 
 fieldset textarea {
 	margin: 3px;
 	height: 165px;
-	background: #e2e4e5;
+	background: #e0e7d3;
 }
 
 fieldset input {
 	margin: 3px;
 	height: 20px;
-	background: #e2e4e5;
+	background: #e0e7d3;
 }
 
 fieldset table {
@@ -336,4 +336,34 @@ fieldset th {
 
 .updated {
 	background:#ecf1e5;
-	font-size:11p
+	font-size:11px;
+	margin-left:2px;
+	border:4px solid #ecf1e5;
+}
+
+.updated td {
+	padding:2px 8px;
+	font-size:11px;
+	color:#888888;
+}
+
+.dijitArrowButton {
+	height: 20px;
+}
+
+.dijitTextArea{
+	min-height:5.5em !important;
+	max-height:22em !important;
+	overflow-y: auto !important;
+	max-width: 175px;
+}
+
+.RichTextEditable{
+	min-height:18em !important;
+	max-height:18em !important;
+}
+
+.flag {
+	height: 11px;
+	width: 16px;
+}
