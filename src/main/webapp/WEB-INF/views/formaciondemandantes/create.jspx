@@ -3,9 +3,9 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Formaciondemandante" modelAttribute="formaciondemandante" path="/formaciondemandantes" render="${empty dependencies}" z="Ufi7qzU6M1migyA3eJuFdDyrvik=">
-        <field:select field="idformacion" itemLabel="titulacion" id="c_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" itemValue="id" items="${formacions}" path="/formacions" z="KCceFGHHl9OPBXLy6dpUUBryHno="/>
+        <field:select field="idformacion" id="c_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" itemLabel="titulacion" itemValue="id" items="${formacions}" path="/formacions" z="user-managed"/>
         <field:select field="idcentro" id="c_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" itemValue="id" items="${centroes}" path="/centroes" z="JpgJfTQcN+7E3HFfJRk9ss95Mfw="/>
-        <field:select field="iddemandante" itemLabel="nombre" id="c_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" itemValue="id" items="${demandantes}" path="/demandantes" z="uo5aymc6Zg4DaDtIvLGsum+fzwo="/>
+        <field:select field="iddemandante" id="c_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" itemLabel="nombre" itemValue="id" items="${demandantes}" path="/demandantes" z="user-managed"/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_esijob_domain_Formaciondemandante" render="${not empty dependencies}" z="McAKo9IeapRf/L3+0yd3GnjJ+wI="/>
 </div>

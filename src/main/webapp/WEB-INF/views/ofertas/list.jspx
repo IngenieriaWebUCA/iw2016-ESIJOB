@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:sec="http://www.springframework.org/security/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_esijob_domain_Oferta" items="${ofertas}" z="2FEvc0e3hckzeHIh1OqNcafRpbo=">
-        <table:table data="${ofertas}" id="l_es_uca_iw_esijob_domain_Oferta" path="/ofertas" z="Z0ZouU0sBYcyK1D7mwl2jgNjH2s=">
-            <table:column id="c_es_uca_iw_esijob_domain_Oferta_idformacion" property="idformacion" z="wU/CWUQDonq5/LaNyFt1WFOrkOo="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Oferta_idsede" property="idsede" z="VY8PiwtnsQeXnAPLHqyLeliGnJk="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Oferta_estado" property="estado" z="s8wiIwK4+KHXwqzYyKmx0rXYlyU="/>
-            <table:column id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" property="tipoContrato" z="l5ug5/torPl4piETlHvpc8h6m7c="/>
-        </table:table>
+        <sec:authorize access="hasRole('ROLE_USER')">
+            <table:table create="false" data="${ofertas}" delete="false" id="l_es_uca_iw_esijob_domain_Oferta" path="/ofertas" update="false" z="user-managed">
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_idformacion" property="idformacion" z="wU/CWUQDonq5/LaNyFt1WFOrkOo="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_idsede" property="idsede" z="VY8PiwtnsQeXnAPLHqyLeliGnJk="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_estado" property="estado" z="s8wiIwK4+KHXwqzYyKmx0rXYlyU="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" property="tipoContrato" z="l5ug5/torPl4piETlHvpc8h6m7c="/>
+            </table:table>
+        </sec:authorize>
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <table:table data="${ofertas}" id="l_es_uca_iw_esijob_domain_Oferta" path="/ofertas" z="Z0ZouU0sBYcyK1D7mwl2jgNjH2s=">
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_idformacion" property="idformacion" z="wU/CWUQDonq5/LaNyFt1WFOrkOo="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_idsede" property="idsede" z="VY8PiwtnsQeXnAPLHqyLeliGnJk="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_estado" property="estado" z="s8wiIwK4+KHXwqzYyKmx0rXYlyU="/>
+                <table:column id="c_es_uca_iw_esijob_domain_Oferta_tipoContrato" property="tipoContrato" z="l5ug5/torPl4piETlHvpc8h6m7c="/>
+            </table:table>
+        </sec:authorize>
     </page:list>
 </div>

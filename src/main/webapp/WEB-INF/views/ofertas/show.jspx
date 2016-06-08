@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:sec="http://www.springframework.org/security/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_es_uca_iw_esijob_domain_Oferta" object="${oferta}" path="/ofertas" z="JVDQBjfJRvVx/4hzr3YtJkihTxg=">
-        <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Oferta_idformacion" object="${oferta}" z="MSGWjac345dj/lAzUvy+J8nFQyQ="/>
-        <field:display field="idsede" id="s_es_uca_iw_esijob_domain_Oferta_idsede" object="${oferta}" z="N07gJp3Ea5lmP4R8ufH4W5e/apI="/>
-        <field:display field="titulo" id="s_es_uca_iw_esijob_domain_Oferta_titulo" object="${oferta}" z="YFRzMjvCwtWdzWL0ohBfBHGNHkc="/>
-        <field:display field="infoPuesto" id="s_es_uca_iw_esijob_domain_Oferta_infoPuesto" object="${oferta}" z="AoDyCzmM/viItkjUfSBqPlaN90c="/>
-        <field:display field="tipoContrato" id="s_es_uca_iw_esijob_domain_Oferta_tipoContrato" object="${oferta}" z="7OkOx4XGk2CSeCFza6rA95pl/7c="/>
-        <field:display field="salarioBruto" id="s_es_uca_iw_esijob_domain_Oferta_salarioBruto" object="${oferta}" z="2fJ/U8JQUu4iECzsAZFTioO6H/A="/>
-        <field:display date="true" dateTimePattern="${oferta_fechainc_date_format}" field="fechaInc" id="s_es_uca_iw_esijob_domain_Oferta_fechaInc" object="${oferta}" z="bzhTbisQdiDoDyYbnUUoJ35m7Zk="/>
-        <field:display field="numVac" id="s_es_uca_iw_esijob_domain_Oferta_numVac" object="${oferta}" z="cR9J06kRxr/Hu2vA8SKiZPicA68="/>
-        <field:display field="perfilDem" id="s_es_uca_iw_esijob_domain_Oferta_perfilDem" object="${oferta}" z="6GwMluV6Geh33JuNRzgIRwWbRA0="/>
-        <field:display date="true" dateTimePattern="${oferta_fecinioferta_date_format}" field="fecIniOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecIniOferta" object="${oferta}" z="HeIba0sX80n4jqDJOtfncBxuYkI="/>
-        <field:display date="true" dateTimePattern="${oferta_fecfinoferta_date_format}" field="fecFinOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecFinOferta" object="${oferta}" z="sEqrVdEIFio3SiPiH+/cuP14fvE="/>
-        <field:display field="estado" id="s_es_uca_iw_esijob_domain_Oferta_estado" object="${oferta}" z="H29h64ZaMF5OdjYs+RvrrcgKHqo="/>
-    </page:show>
+    <sec:authorize access="hasRole('ROLE_USER')">
+        <page:show create="false" delete="false" id="ps_es_uca_iw_esijob_domain_Oferta" object="${oferta}" path="/ofertas" update="false" z="user-managed">
+            <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Oferta_idformacion" object="${oferta}" z="MSGWjac345dj/lAzUvy+J8nFQyQ="/>
+            <field:display field="idsede" id="s_es_uca_iw_esijob_domain_Oferta_idsede" object="${oferta}" z="N07gJp3Ea5lmP4R8ufH4W5e/apI="/>
+            <field:display field="titulo" id="s_es_uca_iw_esijob_domain_Oferta_titulo" object="${oferta}" z="YFRzMjvCwtWdzWL0ohBfBHGNHkc="/>
+            <field:display field="infoPuesto" id="s_es_uca_iw_esijob_domain_Oferta_infoPuesto" object="${oferta}" z="AoDyCzmM/viItkjUfSBqPlaN90c="/>
+            <field:display field="tipoContrato" id="s_es_uca_iw_esijob_domain_Oferta_tipoContrato" object="${oferta}" z="7OkOx4XGk2CSeCFza6rA95pl/7c="/>
+            <field:display field="salarioBruto" id="s_es_uca_iw_esijob_domain_Oferta_salarioBruto" object="${oferta}" z="2fJ/U8JQUu4iECzsAZFTioO6H/A="/>
+            <field:display date="true" dateTimePattern="${oferta_fechainc_date_format}" field="fechaInc" id="s_es_uca_iw_esijob_domain_Oferta_fechaInc" object="${oferta}" z="bzhTbisQdiDoDyYbnUUoJ35m7Zk="/>
+            <field:display field="numVac" id="s_es_uca_iw_esijob_domain_Oferta_numVac" object="${oferta}" z="cR9J06kRxr/Hu2vA8SKiZPicA68="/>
+            <field:display field="perfilDem" id="s_es_uca_iw_esijob_domain_Oferta_perfilDem" object="${oferta}" z="6GwMluV6Geh33JuNRzgIRwWbRA0="/>
+            <field:display date="true" dateTimePattern="${oferta_fecinioferta_date_format}" field="fecIniOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecIniOferta" object="${oferta}" z="HeIba0sX80n4jqDJOtfncBxuYkI="/>
+            <field:display date="true" dateTimePattern="${oferta_fecfinoferta_date_format}" field="fecFinOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecFinOferta" object="${oferta}" z="sEqrVdEIFio3SiPiH+/cuP14fvE="/>
+            <field:display field="estado" id="s_es_uca_iw_esijob_domain_Oferta_estado" object="${oferta}" z="H29h64ZaMF5OdjYs+RvrrcgKHqo="/>
+        </page:show>
+    </sec:authorize>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <page:show id="ps_es_uca_iw_esijob_domain_Oferta" object="${oferta}" path="/ofertas" z="JVDQBjfJRvVx/4hzr3YtJkihTxg=">
+            <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Oferta_idformacion" object="${oferta}" z="MSGWjac345dj/lAzUvy+J8nFQyQ="/>
+            <field:display field="idsede" id="s_es_uca_iw_esijob_domain_Oferta_idsede" object="${oferta}" z="N07gJp3Ea5lmP4R8ufH4W5e/apI="/>
+            <field:display field="titulo" id="s_es_uca_iw_esijob_domain_Oferta_titulo" object="${oferta}" z="YFRzMjvCwtWdzWL0ohBfBHGNHkc="/>
+            <field:display field="infoPuesto" id="s_es_uca_iw_esijob_domain_Oferta_infoPuesto" object="${oferta}" z="AoDyCzmM/viItkjUfSBqPlaN90c="/>
+            <field:display field="tipoContrato" id="s_es_uca_iw_esijob_domain_Oferta_tipoContrato" object="${oferta}" z="7OkOx4XGk2CSeCFza6rA95pl/7c="/>
+            <field:display field="salarioBruto" id="s_es_uca_iw_esijob_domain_Oferta_salarioBruto" object="${oferta}" z="2fJ/U8JQUu4iECzsAZFTioO6H/A="/>
+            <field:display date="true" dateTimePattern="${oferta_fechainc_date_format}" field="fechaInc" id="s_es_uca_iw_esijob_domain_Oferta_fechaInc" object="${oferta}" z="bzhTbisQdiDoDyYbnUUoJ35m7Zk="/>
+            <field:display field="numVac" id="s_es_uca_iw_esijob_domain_Oferta_numVac" object="${oferta}" z="cR9J06kRxr/Hu2vA8SKiZPicA68="/>
+            <field:display field="perfilDem" id="s_es_uca_iw_esijob_domain_Oferta_perfilDem" object="${oferta}" z="6GwMluV6Geh33JuNRzgIRwWbRA0="/>
+            <field:display date="true" dateTimePattern="${oferta_fecinioferta_date_format}" field="fecIniOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecIniOferta" object="${oferta}" z="HeIba0sX80n4jqDJOtfncBxuYkI="/>
+            <field:display date="true" dateTimePattern="${oferta_fecfinoferta_date_format}" field="fecFinOferta" id="s_es_uca_iw_esijob_domain_Oferta_fecFinOferta" object="${oferta}" z="sEqrVdEIFio3SiPiH+/cuP14fvE="/>
+            <field:display field="estado" id="s_es_uca_iw_esijob_domain_Oferta_estado" object="${oferta}" z="H29h64ZaMF5OdjYs+RvrrcgKHqo="/>
+        </page:show>
+    </sec:authorize>
 </div>

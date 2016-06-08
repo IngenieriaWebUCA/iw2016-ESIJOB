@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_es_uca_iw_esijob_domain_Puesto" modelAttribute="puesto" path="/puestoes" render="${empty dependencies}" z="58npIPfgwWclN9HAKU0Sfj+grjY=">
-        <field:select field="iddemandante" itemLabel="nombre" id="c_es_uca_iw_esijob_domain_Puesto_iddemandante" itemValue="id" items="${demandantes}" path="/demandantes" z="ao3alAc7EiG0uE4srVYhCEvvyWg="/>
-        <field:select field="idoferta" itemLabel="titulo" id="c_es_uca_iw_esijob_domain_Puesto_idoferta" itemValue="id" items="${ofertas}" path="/ofertas" z="gduGBMgNofk1jXFavY0f3xwbJPg="/>
+        <field:select field="iddemandante" id="c_es_uca_iw_esijob_domain_Puesto_iddemandante" itemLabel="nombre" itemValue="id" items="${demandantes}" path="/demandantes" z="user-managed"/>
+        <field:select field="idoferta" id="c_es_uca_iw_esijob_domain_Puesto_idoferta" itemLabel="titulo" itemValue="id" items="${ofertas}" path="/ofertas" z="user-managed"/>
         <field:input field="nombre" id="c_es_uca_iw_esijob_domain_Puesto_nombre" required="true" z="wJyQAOkPhVOMkeU3HmaC/9iWaAQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_es_uca_iw_esijob_domain_Puesto" render="${not empty dependencies}" z="puABfpIu6+uWJPyKJhamAb0en94="/>

@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:sec="http://www.springframework.org/security/tags" xmlns:table="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_es_uca_iw_esijob_domain_Empresa" items="${empresas}" z="X2BrGc3VpAmMoRSzQQceUfzIp3M=">
-        <table:table data="${empresas}" id="l_es_uca_iw_esijob_domain_Empresa" path="/empresas" z="p/udZzJVwThME2EoqI1TmJhNZoQ=">
+        <sec:authorize access="hasRole('ROLE_USER')">
+        <table:table create="false" update="false" delete="false" data="${empresas}" id="l_es_uca_iw_esijob_domain_Empresa" path="/empresas" z="user-managed">
+            <table:column id="c_es_uca_iw_esijob_domain_Empresa_nombre" property="nombre" z="LQyXRgqGigOVR5B7qOGohampl/8="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Empresa_cif" property="cif" z="J7bCX7s6RV9+/eASqBDUAkb99BY="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Empresa_email" property="email" z="J55tYE1Nl7VUm43UWhywDqks7Yc="/>
+            <table:column id="c_es_uca_iw_esijob_domain_Empresa_actProf" property="actProf" z="0bJwp0RQB2CdUVI1gbXpsB6gfNo="/>
+        </table:table>
+        </sec:authorize>
+        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <table:table data="${empresas}" id="l_es_uca_iw_esijob_domain_Empresa" path="/empresas" z="user-managed">
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_idusuario" property="idusuario" z="eCwHvKY6WdynexAAH8mfSHlNwLc="/>
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_nombre" property="nombre" z="LQyXRgqGigOVR5B7qOGohampl/8="/>
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_cif" property="cif" z="J7bCX7s6RV9+/eASqBDUAkb99BY="/>
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_email" property="email" z="J55tYE1Nl7VUm43UWhywDqks7Yc="/>
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_actProf" property="actProf" z="0bJwp0RQB2CdUVI1gbXpsB6gfNo="/>
         </table:table>
+        </sec:authorize>
     </page:list>
 </div>

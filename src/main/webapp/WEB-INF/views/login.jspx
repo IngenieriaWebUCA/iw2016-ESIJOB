@@ -53,5 +53,8 @@
       	</div>
 
       </form>
+      <button class="btn-success btn-block" onclick="usuarios?form">
+        Registro Usuario
+      </button>
 
 </div>

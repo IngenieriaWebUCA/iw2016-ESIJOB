@@ -22,7 +22,6 @@
 				title="${fn:escapeXml(home_label)}">${fn:escapeXml(project_name)}</a>
 
 			</div>
-
 </div>
 
 

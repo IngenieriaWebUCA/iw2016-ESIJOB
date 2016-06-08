@@ -1,5 +1,6 @@
 /*DROP DATABASE IF EXISTS `esijob`;*/
 CREATE DATABASE  IF NOT EXISTS `esijob` /*!40100 DEFAULT CHARACTER SET latin1 */;
+/*CREATE USER `esijob`@`localhost` IDENTIFIED BY ``*/
 GRANT ALL PRIVILEGES ON `esijob`.* TO 'esijob'@'localhost';
 USE `esijob`;
 
