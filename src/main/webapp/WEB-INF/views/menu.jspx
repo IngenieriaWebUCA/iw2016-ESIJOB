@@ -6,6 +6,7 @@
         <!-- Demandante -->
         <sec:authorize access="hasRole('ROLE_USER')">
             <menu:category id="c_usuario" z="g6oG0656PcsmmvUYeBtpgiQROck=">
+                <menu:item id="i_demandante_new" messageCode="global_menu_new" url="/demandantes?form" z="8+S2ulD0VSXmoyyhDfXJ+CNxgh8="/>
                 <menu:item id="i_demandante_list" messageCode="global_menu_list" url="/demandantes?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1MtvqFaAsZmIa4hZR8pApwIOdDY="/>
                 <menu:item id="i_experiencia_new" messageCode="global_menu_new" url="/experiencias?form" z="Gj9nsB/aDd/9cC/oyGqhopJQZKQ="/>
                 <menu:item id="i_experiencia_list" messageCode="global_menu_list" url="/experiencias?page=1&amp;size=${empty param.size ? 10 : param.size}" z="3kfSOJO53kI+4hjcnrvpR+D+xW0="/>

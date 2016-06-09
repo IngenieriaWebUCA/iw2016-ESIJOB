@@ -27,14 +27,6 @@ privileged aspect Usuario_Roo_DbManaged {
     @NotNull
     private String Usuario.password;
     
-    @Column(name = "enable")
-    @NotNull
-    private boolean Usuario.enable;
-    
-    @Column(name = "rol", length = 45)
-    @NotNull
-    private String Usuario.rol;
-    
     public Set<Demandante> Usuario.getDemandantes() {
         return demandantes;
     }
@@ -65,22 +57,6 @@ privileged aspect Usuario_Roo_DbManaged {
     
     public void Usuario.setPassword(String password) {
         this.password = password;
-    }
-    
-    public boolean Usuario.isEnable() {
-        return enable;
-    }
-    
-    public void Usuario.setEnable(boolean enable) {
-        this.enable = enable;
-    }
-    
-    public String Usuario.getRol() {
-        return rol;
-    }
-    
-    public void Usuario.setRol(String rol) {
-        this.rol = rol;
     }
     
 }

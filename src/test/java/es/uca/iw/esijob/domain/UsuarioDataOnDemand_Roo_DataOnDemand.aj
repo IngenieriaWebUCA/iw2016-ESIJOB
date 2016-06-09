@@ -53,7 +53,7 @@ privileged aspect UsuarioDataOnDemand_Roo_DataOnDemand {
     }
     
     public void UsuarioDataOnDemand.setRol(Usuario obj, int index) {
-        String rol = "rol_" + index;
+        String rol = "ROLE_USER_" + index;
         if (rol.length() > 45) {
             rol = rol.substring(0, 45);
         }
