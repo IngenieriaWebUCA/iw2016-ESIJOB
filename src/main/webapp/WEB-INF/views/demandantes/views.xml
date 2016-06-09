@@ -13,4 +13,10 @@
 <definition extends="default" name="demandantes/update">
         <put-attribute name="body" value="/WEB-INF/views/demandantes/update.jspx"/>
     </definition>
+<definition extends="default" name="demandantes/findDemandantesByExperienciaLike">
+        <put-attribute name="body" value="/WEB-INF/views/demandantes/findDemandantesByExperienciaLike.jspx"/>
+    </definition>
+<definition extends="default" name="demandantes/findDemandantesByNombreLike">
+        <put-attribute name="body" value="/WEB-INF/views/demandantes/findDemandantesByNombreLike.jspx"/>
+    </definition>
 </tiles-definitions>

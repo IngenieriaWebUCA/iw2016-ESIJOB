@@ -3,9 +3,6 @@ CREATE DATABASE  IF NOT EXISTS `esijob` /*!40100 DEFAULT CHARACTER SET latin1 */
 /*CREATE USER `esijob`@`localhost` IDENTIFIED BY ``*/
 GRANT ALL PRIVILEGES ON `esijob`.* TO 'esijob'@'localhost';
 USE `esijob`;
-
-
-
 -- MySQL dump 10.13  Distrib 5.5.49, for debian-linux-gnu (x86_64)
 --
 -- Host: 127.0.0.1    Database: esijob
@@ -337,7 +334,7 @@ CREATE TABLE `oferta` (
   CONSTRAINT `oferta_contrato` FOREIGN KEY (`tipoContrato`) REFERENCES `contrato` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `oferta_estado` FOREIGN KEY (`estado`) REFERENCES `estado` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `oferta_ibfk_1` FOREIGN KEY (`idsede`) REFERENCES `sede` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,7 +343,7 @@ CREATE TABLE `oferta` (
 
 LOCK TABLES `oferta` WRITE;
 /*!40000 ALTER TABLE `oferta` DISABLE KEYS */;
-INSERT INTO `oferta` VALUES (1,'Programador C++','Programar mucho',1,1,1,30000,'2016-06-01',2,'Que sea un máquina','2016-06-07','2016-06-22',1);
+INSERT INTO `oferta` VALUES (1,'Programador C++','Programar mucho',1,1,1,30000,'2016-06-01',2,'Que sea un máquina','2016-06-07','2016-06-22',1),(2,'Oferta1','Directivo',1,1,2,12345,'2016-06-30',3,'Gestores','2016-06-09','2016-06-16',1);
 /*!40000 ALTER TABLE `oferta` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,9 +440,9 @@ CREATE TABLE `usuario` (
   `login` varchar(32) NOT NULL,
   `password` varchar(16) NOT NULL,
   `enable` tinyint(1) NOT NULL DEFAULT '1' COMMENT '1: Empresa, 2: Demandante',
-  `rol` varchar(45) NOT NULL,
+  `rol` varchar(45) NOT NULL DEFAULT 'ROLE_USER',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -454,9 +451,13 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` VALUES (1,'microsoft','microsoft',1,'ROLE_USER'),(2,'google','google',1,'ROLE_USER'),(3,'admin','admin',1,'ROLE_ADMIN');
+INSERT INTO `usuario` VALUES (1,'microsoft','microsoft',1,'ROLE_EMPRESA'),(2,'google','google',1,'ROLE_EMPRESA'),(3,'admin','admin',1,'ROLE_ADMIN'),(4,'usuario','usuario',1,'ROLE_USER'),(5,'empresa','empresa',1,'ROLE_EMPRESA'),(7,'gestor','gestor',1,'ROLE_GESTOR');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'esijob'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -467,4 +468,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-02 15:40:26
+-- Dump completed on 2016-06-09 19:19:17

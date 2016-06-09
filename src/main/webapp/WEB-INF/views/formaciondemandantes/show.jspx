@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/jquery/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/jquery/form" xmlns:sec="http://www.springframework.org/security/tags" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_es_uca_iw_esijob_domain_Formaciondemandante" object="${formaciondemandante}" path="/formaciondemandantes" z="F2o5Vsb8QcH0ZfIjLjCZsBovlZA=">
-        <field:display field="idcentro" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" object="${formaciondemandante}" z="anEDAD+jVOy/aIGekbTn1ECkoWM="/>
-        <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" object="${formaciondemandante}" z="ZALjEdCjKtWO8wUvSoZ3rgjZvxY="/>
-        <field:display field="iddemandante" id="s_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" object="${formaciondemandante}" z="GT5qKHadHdViio7WxJ0VhsysQZQ="/>
-    </page:show>
+    <sec:authorize access="hasRole('ROLE_USER')">
+        <page:show create="false" delete="false" id="ps_es_uca_iw_esijob_domain_Formaciondemandante" object="${formaciondemandante}" path="/formaciondemandantes" update="false" z="user-managed">
+            <field:display field="idcentro" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" object="${formaciondemandante}" z="anEDAD+jVOy/aIGekbTn1ECkoWM="/>
+            <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" object="${formaciondemandante}" z="ZALjEdCjKtWO8wUvSoZ3rgjZvxY="/>
+            <field:display field="iddemandante" id="s_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" object="${formaciondemandante}" z="GT5qKHadHdViio7WxJ0VhsysQZQ="/>
+        </page:show>
+    </sec:authorize>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <page:show id="ps_es_uca_iw_esijob_domain_Formaciondemandante" object="${formaciondemandante}" path="/formaciondemandantes" z="F2o5Vsb8QcH0ZfIjLjCZsBovlZA=">
+            <field:display field="idcentro" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idcentro" object="${formaciondemandante}" z="anEDAD+jVOy/aIGekbTn1ECkoWM="/>
+            <field:display field="idformacion" id="s_es_uca_iw_esijob_domain_Formaciondemandante_idformacion" object="${formaciondemandante}" z="ZALjEdCjKtWO8wUvSoZ3rgjZvxY="/>
+            <field:display field="iddemandante" id="s_es_uca_iw_esijob_domain_Formaciondemandante_iddemandante" object="${formaciondemandante}" z="GT5qKHadHdViio7WxJ0VhsysQZQ="/>
+        </page:show>
+    </sec:authorize>
 </div>

@@ -13,4 +13,13 @@
 <definition extends="default" name="ofertas/update">
         <put-attribute name="body" value="/WEB-INF/views/ofertas/update.jspx"/>
     </definition>
+<definition extends="default" name="ofertas/findOfertasByInfoPuestoLike">
+        <put-attribute name="body" value="/WEB-INF/views/ofertas/findOfertasByInfoPuestoLike.jspx"/>
+    </definition>
+<definition extends="default" name="ofertas/findOfertasBySalarioBrutoGreaterThanEquals">
+        <put-attribute name="body" value="/WEB-INF/views/ofertas/findOfertasBySalarioBrutoGreaterThanEquals.jspx"/>
+    </definition>
+<definition extends="default" name="ofertas/findOfertasByTituloLike">
+        <put-attribute name="body" value="/WEB-INF/views/ofertas/findOfertasByTituloLike.jspx"/>
+    </definition>
 </tiles-definitions>

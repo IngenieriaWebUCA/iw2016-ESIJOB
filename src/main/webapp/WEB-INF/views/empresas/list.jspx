@@ -11,7 +11,7 @@
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_actProf" property="actProf" z="0bJwp0RQB2CdUVI1gbXpsB6gfNo="/>
         </table:table>
         </sec:authorize>
-        <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_GESTOR')">
         <table:table data="${empresas}" id="l_es_uca_iw_esijob_domain_Empresa" path="/empresas" z="user-managed">
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_idusuario" property="idusuario" z="eCwHvKY6WdynexAAH8mfSHlNwLc="/>
             <table:column id="c_es_uca_iw_esijob_domain_Empresa_nombre" property="nombre" z="LQyXRgqGigOVR5B7qOGohampl/8="/>

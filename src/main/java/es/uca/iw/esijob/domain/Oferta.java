@@ -5,8 +5,8 @@ import org.springframework.roo.addon.jpa.activerecord.RooJpaActiveRecord;
 import org.springframework.roo.addon.tostring.RooToString;
 
 @RooJavaBean
-@RooJpaActiveRecord(versionField = "", table = "oferta")
 @RooDbManaged(automaticallyDelete = true)
 @RooToString(excludeFields = { "inscripcions", "puestoes", "idformacion", "idsede", "estado", "tipoContrato" })
+@RooJpaActiveRecord(versionField = "", table = "oferta", finders = { "findOfertasByTituloLike", "findOfertasBySalarioBrutoGreaterThanEquals", "findOfertasByInfoPuestoLike" })
 public class Oferta {
 }
