@@ -51,10 +51,10 @@
 			<button type="reset" class="btn btn-default btn-sm btn-block" id="reset"><spring:message code="button_reset"/></button>
 
       	</div>
-
+      
       </form>
-      <button class="btn-success btn-block" onclick="usuarios?form">
-        Registro Usuario
-      </button>
+<div>
+   <h4><a href="usuarios?form">Registrarse</a></h4>
+</div>
 
 </div>

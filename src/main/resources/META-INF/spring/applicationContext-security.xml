@@ -13,7 +13,45 @@
         <intercept-url pattern="/member/**" access="isAuthenticated()" />
         <intercept-url pattern="/resources/**" access="permitAll" />
         <intercept-url pattern="/login/**" access="permitAll" />
-        <intercept-url pattern="/**" access="isAuthenticated()" />
+        <intercept-url pattern="/" access="isAuthenticated()" />
+        <!-- USUARIO -->
+        <intercept-url pattern="\A/usuarios?form.*\Z" access="permitAll" />
+        <intercept-url pattern="\A/usuarios\?page=\d*.*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN')" />
+        <intercept-url pattern="\A/usuarios\?page=\d*.*\Z" access="isAuthenticated()" />
+        <!-- DEMANDANTE -->
+        <intercept-url pattern="\A/demandantes\?form.*\Z" access="asAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+        <intercept-url pattern="\A/demandantes\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN')" />
+        <intercept-url pattern="\A/demandantes\?page=\d*.*\Z" access="isAuthenticated()" />
+        <!-- EMPRESA -->
+        <intercept-url pattern="\A/empresas\?form.*\Z" access="asAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/empresas\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/empresas\?page=\d*.*\Z" access="isAuthenticated()" />
+        <!-- CENTRO -->
+        <intercept-url pattern="\A/empresas\?form.*\Z" access="asAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/empresas\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/empresas\?page=\d*\Z" access="isAuthenticated()" />
+        <!-- SEDE -->
+        <intercept-url pattern="\A/sedes\?form.*\Z" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/sedes\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR', 'ROLE_USER')" />
+        <intercept-url pattern="\A/sedes\?page=\d*\Z" method="DELETE" access="isAuthenticated()" />
+        <!-- OFERTA -->
+        <intercept-url pattern="\A/ofertas\?form.*\Z" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR', 'ROLE_USER')" />
+        <intercept-url pattern="\A/ofertas\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR', 'ROLE_USER')" />
+        <intercept-url pattern="\A/ofertas\?page=\d*\Z" access="isAuthenticated()" />
+        <!-- INSCRIPCION -->
+        <intercept-url pattern="\A/inscripcions\?form.*\Z" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+        <intercept-url pattern="\A/inscripcions\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+        <intercept-url pattern="\A/inscripcions\?page=\d*\Z" access="isAuthenticated()" />
+        <!-- PUESTO -->
+        <intercept-url pattern="\A/puestoes\?form.*\Z" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/puestoes\?page=\d*\Z" method="DELETE" access="hasAnyRole('ROLE_ADMIN', 'ROLE_EMPRESA', 'ROLE_GESTOR')" />
+        <intercept-url pattern="\A/puestoes\?page=\d*\Z" access="isAuthenticated()" />
+        <!-- EXPERIENCIA -->
+        <intercept-url pattern="\A/experiencias\?form.*\Z" access="asAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+        <intercept-url pattern="\A/experiencias\?page=\d*\Z" method="DELETE" access="asAnyRole('ROLE_ADMIN', 'ROLE_USER')" />
+        <intercept-url pattern="\A/experiencias\?page=\d*\Z" access="isAuthenticated()" />
+
+
     </http>
     <!-- Configure Authentication mechanism -->
     <authentication-manager alias="authenticationManager">
